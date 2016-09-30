@@ -1,0 +1,221 @@
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">TUT<i class="fa fa-circle"></i>S UNAL</a>
+          <a class="navbar-brand" href="/"><img <%= image_tag("maestrico3.png", :alt => "") %> </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="active"><%= link_to "INICIO", root_path %></li>
+
+            <li><%= link_to "SERVICIOS", function_path %> </li>
+            <li><%= link_to "EQUIPO", team_path %> </li>
+            <li><%= link_to "ENTRAR", entrar_path %> </li>
+            <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
+            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="headerwrap">
+		<div class="container">
+
+			<div class="row centered">
+
+				<div class="col-lg-8 col-lg-offset-2">
+
+        <div class="img-responsive" data-background= <%= image_tag "originrespaldo.jpg" %> </div>
+
+
+				<h1> <%= link_to "Ingresa", entrar_path %>, <b>APP</b>licate</h1>
+				<h2>y refuerza tus conocimientos</h2>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- headerwrap -->
+
+
+	<div class="container w">
+		<div class="row centered">
+			<br><br>
+      <div align='center'>
+			<div align='center' class="col-lg-6">
+        <!-- http://fontawesome.io/icons/#web-application -->
+				<i class="fa fa-camera-retro"></i>
+				<h4>DESCRIPCIÓN</h4>
+				<p>Realizar una página web sobre tutorías, donde los estudiantes puedan entrar y consultar los tutores disponibles para ciertas materias y ver el horario que ellos disponen. Habrán dos diferentes usuarios con diferentes
+          funcionalidades (tutor y estudiante), también una sección de recursos donde se podrá consultar material y un foro de comentarios,donde se podrán realizar aportes por parte de los estudiantes..</p>
+			</div><!-- col-lg-4 -->
+
+			<div align='center' class="col-lg-6">
+				<i class="fa fa-coffee"></i>
+				<h4>NECESIDAD</h4>
+				<p>Dado a que se encuentra una falta de logística y automatización en las tutorías unal, se pensó desarrollar el proyecto para poder facilitar el trabajo entre los monitores y estudiantes. Con esta idea se piensa
+          personalizar un servicio académico en el que se lleve un mejor control para los estudiantes y en el cual se promueva la asistencia a las tutorías para mejorar el desempeño en las materias que se encuentra cursando el estudiante..</p>
+			</div><!-- col-lg-4 -->
+    </div>
+
+<% if false %>
+			<div class="col-lg-4">
+				<i class="fa fa-laptop"></i>
+				<h4>SUPPORT</h4>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.</p>
+			</div><!-- col-lg-4 -->
+<% end %>
+		</div><!-- row -->
+		<br>
+	</div><!-- container -->
+
+<% if false %>
+	<!-- PORTFOLIO SECTION -->
+	<div id="dg">
+		<div class="container">
+			<div class="row centered">
+				<h4>LATEST WORKS</h4>
+				<br>
+				<div class="col-lg-4">
+					<div class="tilt">
+					<a href="#"><img src="assets/img/p01.png" alt=""></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="tilt">
+					<a href="#"><img src="assets/img/p03.png" alt=""></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="tilt">
+					<a href="#"><img src="assets/img/p02.png" alt=""></a>
+					</div>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- DG -->
+<% end %>
+
+	<!-- FEATURE SECTION -->
+	<div class="container wb">
+		<div class="row centered">
+			<br><br>
+
+			<div align='center' class="col-lg-8 col-lg-offset-2">
+				<h4>NUESTRA APP CONTRIBUYE A LA FORMACION ACADEMICA</h4>
+				<p>Contribuimos en los procesos comunicativos, fortaleciendo las labores entre docentes y estudiante por medio del proceso enseñanza-aprendizaje basado en la relacion de acompañamiento y orientacion del tutor hacia el estudiante, guiando a estos ultimos a la superación de las dificultades que puedan surgir en sus procesos de aprendizaje ofreciendo una plataforma simple y dinamica.</p>
+			<p><br/></p>
+			</div>
+			<div class="col-lg-2"></div>
+			<div class="col-lg-10 col-lg-offset-1">
+        <img class="img-responsive" <%= image_tag("monitorias.jpg", :alt => "") %>
+				<img class="img-responsive" src="assets/img/munter.png" alt="">
+			</div>
+		</div><!-- row -->
+	</div><!-- container -->
+
+
+	<div id="lg">
+		<div class="container">
+			<div class="row centered">
+        <br/><br/><br/>
+				<h4>NUESTROS ASOMBROSOS CLIENTES</h4>
+        <br>
+
+				<div class="col-lg-3 ">
+          <img align="center" <%= image_tag("escudoUnal.png", :alt => "") %>
+					<img src="assets/img/c01.gif" alt="">
+        </div>
+
+				<div class="col-lg-3">
+          <img align="center" <%= image_tag("harvard1.png", :alt => "") %>
+					<img src="assets/img/c02.gif" alt="">
+				</div>
+
+				<div class="col-lg-3">
+          <img align="center" <%= image_tag("tokio.png", :alt => "") %>
+					<img src="assets/img/c03.gif" alt="">
+				</div>
+
+				<div class="col-lg-3">
+          <img align="center" <%= image_tag("tecnisistemas.png", :alt => "") %>
+					<img src="assets/img/c04.gif" alt="">
+				</div>
+				<div class="col-lg-2">
+					<img src="assets/img/c05.gif" alt="">
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- dg -->
+
+
+	<div id="r">
+		<div class="container">
+			<div class="row centered">
+				<div align='center' class="col-lg-8 col-lg-offset-2">
+					<h4>SOMOS CONTADORES DE HISTORIAS.</h4>
+					<p>"Con la ayuda del tutor y con los trabajos realizados por medio de tutos unal ¡por fin! consigo pasar los parciales
+            y lo mejor es que ha subido mi PAPA, gracias TUTOS UNAL ;)".
+              - Richard Melo (Ingenieria de Sistemas).</p>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><! -- r wrap -->
+
+
+	<!-- FOOTER -->
+	<div id="f">
+		<div class="container">
+			<div class="row centered">
+				<a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
+        <p>Todos los derechos reservados © TUTOS-UNAL - 2016 </p>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- Footer -->
+
+
+	<!-- MODAL FOR CONTACT -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">contact us</h4>
+	      </div>
+	      <div class="modal-body">
+		        <div class="row centered">
+		        	<p>We are available 24/7, so don't hesitate to contact us.</p>
+		        	<p>
+		        		Somestreet Ave, 987<br/>
+						London, UK.<br/>
+						+44 8948-4343<br/>
+						hi@blacktie.co
+		        	</p>
+		        	<div id="mapwrap">
+                <iframe height="300" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7557581636174!2d-74.08473304879443!3d4.637605642818688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa653b0fc05dac25c!2s401+Facultad+de+Ingenier%C3%ADa+-+Edificio+Insignia!5e0!3m2!1ses-419!2sco!4v1474764548412"></iframe>
+					</div>
+		        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>

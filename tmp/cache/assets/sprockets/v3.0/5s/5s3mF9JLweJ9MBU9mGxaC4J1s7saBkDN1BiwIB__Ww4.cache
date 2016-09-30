@@ -1,0 +1,7 @@
+I"~(function() {
+  jQuery(document).on('turbolinks:load', function() {
+    return $(element).slick();
+  });
+
+}).call(this);
+:ET
