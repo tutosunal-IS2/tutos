@@ -16,11 +16,21 @@
 
             <li class="active"><%= link_to "INICIO", root_path %></li>
 
-            <li><%= link_to "SERVICIOS", function_path %> </li>
-            <li><%= link_to "EQUIPO", team_path %> </li>
-            <li><%= link_to "ENTRAR", entrar_path %> </li>
-            <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
+
+            <% if student_signed_in?  %>
+    			<li><%=link_to current_student.email,logout_path%></li>
+    		<%elsif tutor_signed_in? %>
+    			<li><%=link_to current_tutor.email,logout_path%></li>
+    			
+    		<% else %>
+	            <li><%= link_to "SERVICIOS", function_path %> </li>
+	            <li><%= link_to "EQUIPO", team_path %> </li>
+	            <li><%= link_to "ENTRAR", entrar_path %> </li>
+	            <li><%= link_to 'Sign in.', student_google_oauth2_omniauth_authorize_path%> </li>
+	            
+	            <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
+	            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

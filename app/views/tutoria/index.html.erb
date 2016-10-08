@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tutoria</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asignatura</th>
+      <th>Facultad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tutoria.each do |tutorium| %>
+      <tr>
+        <td><%= tutorium.asignatura %></td>
+        <td><%= tutorium.facultad %></td>
+        <td><%= link_to 'Show', tutorium %></td>
+        <td><%= link_to 'Edit', edit_tutorium_path(tutorium) %></td>
+        <td><%= link_to 'Destroy', tutorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tutorium', new_tutorium_path %>

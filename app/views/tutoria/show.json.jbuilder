@@ -1,0 +1,1 @@
+json.partial! "tutoria/tutorium", tutorium: @tutorium

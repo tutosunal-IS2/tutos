@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asignatura:</strong>
+  <%= @tutorium.asignatura %>
+</p>
+
+<p>
+  <strong>Facultad:</strong>
+  <%= @tutorium.facultad %>
+</p>
+
+<%= link_to 'Edit', edit_tutorium_path(@tutorium) %> |
+<%= link_to 'Back', tutoria_path %>
