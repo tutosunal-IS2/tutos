@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get 'entrar' => 'intro#renderEntrar'
   get 'team' => 'about#renderAbout'
   get 'function' => 'services#renderServices'
-
+  post "contactUS" => 'pages#contactUS'
   root "pages#index"
+
+
+  
+    
 end
