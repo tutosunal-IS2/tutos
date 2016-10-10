@@ -1,4 +1,4 @@
 class TutorialsController < ApplicationController
-  def index
+  def home
   end
 end
