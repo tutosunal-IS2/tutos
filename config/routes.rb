@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :subjects
   get 'tutorials/index'
 
   devise_for :admins

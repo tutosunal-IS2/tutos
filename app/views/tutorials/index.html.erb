@@ -21,10 +21,10 @@
 	        <li><%= link_to "EQUIPO", team_path %> </li>
 	        <li><%= link_to "ENTRAR", entrar_path %> </li>
 	        <li><%= link_to 'Sign in.', student_google_oauth2_omniauth_authorize_path%> </li>
-	            
+
 	        <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
 	        <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
-           
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -35,13 +35,10 @@
 		<div class="row centered">
 			<br><br>
       <div align='center'>
-			<div align='center' class="col-lg-6">
-        <!-- http://fontawesome.io/icons/#web-application -->
-				<i class="fa fa-camera-retro"></i>
-				<h4>DESCRIPCIÓN</h4>
-				<p>Realizar una página web sobre tutorías, donde los estudiantes puedan entrar y consultar los tutores disponibles para ciertas materias y ver el horario que ellos disponen. Habrán dos diferentes usuarios con diferentes
-          funcionalidades (tutor y estudiante), también una sección de recursos donde se podrá consultar material y un foro de comentarios,donde se podrán realizar aportes por parte de los estudiantes..</p>
-			</div><!-- col-lg-4 -->
+        <div class="field">
+        <%= f.label :subject_id %><br />
+    
+      </div>
 
 			<div align='center' class="col-lg-6">
 				<i class="fa fa-coffee"></i>
@@ -90,7 +87,7 @@
 		</div><!-- container -->
 	</div><!-- DG -->
 <% end %>
-	
+
 	<div id="r">
 		<div class="container">
 			<div class="row centered">
