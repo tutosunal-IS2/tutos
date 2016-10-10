@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'tutorials/index'
+
   devise_for :admins
   resources :tutoria
   devise_for :tutors
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   get 'entrar' => 'intro#renderEntrar'
   get 'team' => 'about#renderAbout'
   get 'function' => 'services#renderServices'
+  get 'tutos' => 'tutorials#index'
 
   root "pages#index"
 end
