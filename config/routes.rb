@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   get 'function' => 'services#renderServices'
   get 'tutos' => 'tutorials#home'
 
+  get 'solving' => 'subjects#solve'
   root "pages#index"
 end

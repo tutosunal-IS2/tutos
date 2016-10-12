@@ -43,12 +43,13 @@
           funcionalidades (tutor y estudiante), también una sección de recursos donde se podrá consultar material y un foro de comentarios,donde se podrán realizar aportes por parte de los estudiantes..</p>
 			</div><!-- col-lg-4 -->
 
-			<div align='center' class="col-lg-6">
-				<i class="fa fa-coffee"></i>
-				<h4>NECESIDAD</h4>
-				<p>Dado a que se encuentra una falta de logística y automatización en las tutorías unal, se pensó desarrollar el proyecto para poder facilitar el trabajo entre los monitores y estudiantes. Con esta idea se piensa
-          personalizar un servicio académico en el que se lleve un mejor control para los estudiantes y en el cual se promueva la asistencia a las tutorías para mejorar el desempeño en las materias que se encuentra cursando el estudiante..</p>
-			</div><!-- col-lg-4 -->
+      <%= form_for(Subject.new) do |f| %>
+        <div class="field">
+            <%= f.label :subject_id %><br />
+            <%= f.text_field :subject_name, data: { autocomplete_source: solving_path} %>
+        </div>
+      <% end %>
+
     </div>
 
 <% if false %>
@@ -102,7 +103,7 @@
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
-	</div><! -- r wrap -->
+	</div><!-- r wrap -->
 
 
 	<!-- FOOTER -->
@@ -150,5 +151,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script async src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

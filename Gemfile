@@ -21,7 +21,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
- 
+
 
 
 # Use sqlite3 as the database for Active Record
@@ -67,3 +67,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'jquery-ui-rails'

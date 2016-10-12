@@ -7,6 +7,13 @@ class SubjectsController < ApplicationController
     @subjects = Subject.all
   end
 
+  def solve
+      @subjects = Subject.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @subjects.map(&:name)
+  end
+
+
+
   # GET /subjects/1
   # GET /subjects/1.json
   def show
