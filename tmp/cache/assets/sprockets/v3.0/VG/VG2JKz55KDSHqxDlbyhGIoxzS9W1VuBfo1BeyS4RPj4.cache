@@ -1,5 +1,0 @@
-I"G(function() {
-  $(".owl-carousel").owlCarousel();
-
-}).call(this);
-:ET
