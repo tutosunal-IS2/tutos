@@ -1,5 +1,0 @@
-I"9(function() {
-  $(element).slick();
-
-}).call(this);
-:ET
