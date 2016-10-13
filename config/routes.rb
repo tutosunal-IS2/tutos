@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'team' => 'about#renderAbout'
   get 'function' => 'services#renderServices'
   get 'tutos' => 'tutorials#home'
+  post "contactUS" => 'pages#contactUS'
 
   get 'solving' => 'subjects#solve'
   root "pages#index"
