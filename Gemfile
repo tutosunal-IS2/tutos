@@ -10,7 +10,7 @@ gem 'font-awesome-rails'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
 
-
+gem 'pg'
 
 gem 'sprockets', '3.6.3'
 
