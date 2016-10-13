@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :estudiantes
   resources :subjects
   get 'tutorials/index'
 
@@ -25,5 +26,7 @@ Rails.application.routes.draw do
   post "contactUS" => 'pages#contactUS'
 
   get 'solving' => 'subjects#solve'
+  get 'study' => 'estudiantes#renderEstudiantes'
+  
   root "pages#index"
 end

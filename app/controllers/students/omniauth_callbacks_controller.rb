@@ -5,7 +5,7 @@ class Students::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
     if @student.persisted?
       sign_in @student, :event => :authentication
 
-      redirect_to root_path
+      redirect_to study_path
 
     else
 
@@ -14,10 +14,10 @@ class Students::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
   end
 
   def destroy_student
-     
+
      sign_out @student
      redirect_to root_path
-     
+
   end
-  
+
 end
