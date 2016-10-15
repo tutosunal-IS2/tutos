@@ -1,0 +1,22 @@
+class EstudiantesController < ApplicationController
+  before_action :set_estudiante, only: [:show, :edit, :update, :destroy]
+
+
+  def infoTutores
+
+      @tutors = Tutor.all
+
+
+      render 'info.js.erb'
+
+
+    else
+      redirect_to root_path
+
+  end
+
+  def renderEstudiantes
+    @tutors = Tutor.all
+  end
+
+end

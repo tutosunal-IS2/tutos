@@ -2,8 +2,20 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :estudiantes
-  resources :subjects
+
+  resources :estudiantes do
+    collection do
+      get 'infoTutores', to: :infoTutores
+    end
+  end
+
+
+  resources :subjects do
+    collection do
+      get 'solve', to: :solve
+    end
+
+  end
   get 'tutorials/index'
 
   devise_for :admins
@@ -26,8 +38,9 @@ Rails.application.routes.draw do
   get 'tutos' => 'tutorials#home'
   post "contactUS" => 'pages#contactUS'
 
-  get 'solving' => 'subjects#solve'
+
+
   get 'study' => 'estudiantes#renderEstudiantes'
-  
+
   root "pages#index"
 end

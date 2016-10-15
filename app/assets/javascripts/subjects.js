@@ -1,10 +1,16 @@
-jQuery(function() {
-  return $('#subject_subject_name').autocomplete({
-    //source: ['apple', 'apricot', 'avocado','calculo','algo','algoritmos','entonces'],
-    source: $('#subject_subject_name').data('autocomplete-source'),
-      select: function( event, ui ) {
-          window.location.href = '/';
-         return false;
-      },
-  })
+$(document).ready(function(){
+  $("#buscador").keyup(function(){
+    if ( $(this).val().trim() == "" ) {
+
+    }else{
+      $.ajax({
+        url:  "/subjects/solve",
+        type: "GET",
+        data: { buscar: $(this).val().trim() },
+        success: function(res){}
+      });
+    }
+
+  });
+
 });

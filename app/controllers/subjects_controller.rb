@@ -8,8 +8,9 @@ class SubjectsController < ApplicationController
   end
 
   def solve
-      @subjects = Subject.order(:name).where("name like ?", "%#{params[:term]}%")
-    render json: @subjects.map(&:name)
+      @subjects = Subject.order(:name).where("name like ?", "%#{params[:buscar]}%")
+
+
   end
 
 

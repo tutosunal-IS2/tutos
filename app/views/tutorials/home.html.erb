@@ -43,12 +43,13 @@
           funcionalidades (tutor y estudiante), también una sección de recursos donde se podrá consultar material y un foro de comentarios,donde se podrán realizar aportes por parte de los estudiantes..</p>
 			</div><!-- col-lg-4 -->
 
-      <%= form_for(Subject.new) do |f| %>
-        <div class="field">
-            <%= f.label :subject_id %><br />
-            <%= f.text_field :subject_name, data: { autocomplete_source: solving_path} %>
-        </div>
-      <% end %>
+      <input type="text" name="nombredelacaja" id="buscador">
+      <div id="any" >
+          <% if @subject  %>
+            <%= render "subjects/cualquier" %>
+          <% end %>
+      </div>
+
 
     </div>
 

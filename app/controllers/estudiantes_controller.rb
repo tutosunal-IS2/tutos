@@ -2,6 +2,17 @@ class EstudiantesController < ApplicationController
   before_action :set_estudiante, only: [:show, :edit, :update, :destroy]
 
 
+  def infoTutores
+    if request.xhr?
+      @tutors = Tutor.find(params[:id])
+
+      render 'info.js.erb'
+    else
+      redirect_to root_path
+    end
+
+  end
+
   def renderEstudiantes
     @tutors = Tutor.all
   end

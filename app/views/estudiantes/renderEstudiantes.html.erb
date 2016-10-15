@@ -56,7 +56,10 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-			 <h4 ALIGN=center>BIENVENIDO ESTUDIANTE   <li><%= current_student.email%></li></b></h4>
+			 <h4 ALIGN=center>HOLA <%= current_student.name%> !</b></h4>
+       <center>
+         <img class="img-circle" <%= image_tag(current_student.image_url,height: '110', width: '110') %>
+       </center>
 				<p ALIGN=center >COMIENZA CON TUS TUTORIAS</p>
 				</div>
 			</div><!-- row -->
@@ -72,27 +75,27 @@
 				<i class="fa fa-group"></i>
 				<h4>CONSULTAR TUTORES <%= link_to '<i class="fa fa-angle-down"></i>'.html_safe , root_path %>   </h4>
 
-        <section class="search-results">
-  <header>
-    <h1 class="h3">Resultados</h1>
-  </header>
 
+
+
+  <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Tutor</th>
-        <th>ID</th>
+        <th><h3>Tutor</h3></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% @tutors.each do |tutor| %>
         <tr>
-          <td><%= tutor.email %><%= button_to "Mas Informacion" %></td>
-          <td><%= tutor.id %></td>
+          <td><strong><h4><%= tutor.email%></h4></strong></td>
+          <td><button type="button" class="btn btn-primary botonInfo" value="<%= tutor.id %>"><%="Más Información"%></button></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  </div>
 </section>
 
 				<p></p>
@@ -102,7 +105,12 @@
 				<i class="fa fa-table"></i>
 				<h4>PROGRAMAR TUTORIAS</h4>
 				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-			</div><!-- col-lg-4 -->
+
+
+        <div id="infoTutor">
+
+      </div>
+      </div><!-- col-lg-4 -->
 
 
 
