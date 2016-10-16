@@ -1,4 +1,8 @@
 class Subject < ApplicationRecord
+
+    has_many :schedule_tutors_subjects
+    has_many :tutors, through: :schedule_tutors_subjects, dependent: :destroy
+
     def subject_name
       name.try(:name)
     end
