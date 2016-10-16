@@ -6,7 +6,7 @@ class LikesTutorsBySubjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get likes_tutors_by_subjects_index_url
+    get likes_tutors_by_subjects_url
     assert_response :success
   end
 
@@ -16,11 +16,11 @@ class LikesTutorsBySubjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create likes_tutors_by_subject" do
-    assert_difference('LikesTutorsBySubjects.count') do
-      post likes_tutors_by_subjects_index_url, params: { likes_tutors_by_subject: { subject_id: @likes_tutors_by_subject.subject_id, tutor_id: @likes_tutors_by_subject.tutor_id } }
+    assert_difference('LikesTutorsBySubject.count') do
+      post likes_tutors_by_subjects_url, params: { likes_tutors_by_subject: { subject_id: @likes_tutors_by_subject.subject_id, tutor_id: @likes_tutors_by_subject.tutor_id } }
     end
 
-    assert_redirected_to likes_tutors_by_subject_url(LikesTutorsBySubjects.last)
+    assert_redirected_to likes_tutors_by_subject_url(LikesTutorsBySubject.last)
   end
 
   test "should show likes_tutors_by_subject" do
@@ -39,10 +39,10 @@ class LikesTutorsBySubjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy likes_tutors_by_subject" do
-    assert_difference('LikesTutorsBySubjects.count', -1) do
+    assert_difference('LikesTutorsBySubject.count', -1) do
       delete likes_tutors_by_subject_url(@likes_tutors_by_subject)
     end
 
-    assert_redirected_to likes_tutors_by_subjects_index_url
+    assert_redirected_to likes_tutors_by_subjects_url
   end
 end

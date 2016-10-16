@@ -1,16 +1,12 @@
-<%= form_for(likes_tutors_by_subject) do |f| %>
+<%= simple_form_for(@likes_tutors_by_subject) do |f| %>
+  <%= f.error_notification %>
 
-  <div class="field">
-    <%= f.label :tutor_id %>
-    <%= f.text_field :tutor_id %>
+  <div class="form-inputs">
+    <%= f.association :tutor %>
+    <%= f.association :subject %>
   </div>
 
-  <div class="field">
-    <%= f.label :subject_id %>
-    <%= f.text_field :subject_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
