@@ -1,0 +1,1 @@
+json.array! @likes_tutors_by_subjects, partial: 'likes_tutors_by_subjects/likes_tutors_by_subject', as: :likes_tutors_by_subject

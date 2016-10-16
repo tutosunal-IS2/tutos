@@ -1,7 +1,7 @@
 class Subject < ApplicationRecord
 
-    has_many :schedule_tutors_subjects
-    has_many :tutors, through: :schedule_tutors_subjects, dependent: :destroy
+    has_many :likes_tutors_by_subjects
+    has_many :tutors, through: :likes_tutors_by_subjects, dependent: :destroy
 
     def subject_name
       name.try(:name)

@@ -1,0 +1,16 @@
+<%= form_for(likes_tutors_by_subject) do |f| %>
+
+  <div class="field">
+    <%= f.label :tutor_id %>
+    <%= f.text_field :tutor_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subject_id %>
+    <%= f.text_field :subject_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

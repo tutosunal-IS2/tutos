@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tutor:</strong>
+  <%= @likes_tutors_by_subject.tutor %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @likes_tutors_by_subject.subject %>
+</p>
+
+<%= link_to 'Edit', edit_likes_tutors_by_subject_path(@likes_tutors_by_subject) %> |
+<%= link_to 'Back', likes_tutors_by_subjects_index_path %>

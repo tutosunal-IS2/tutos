@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Likes Tutors By Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tutor</th>
+      <th>Subject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @likes_tutors_by_subjects.each do |likes_tutors_by_subject| %>
+      <tr>
+        <td><%= likes_tutors_by_subject.tutor %></td>
+        <td><%= likes_tutors_by_subject.subject %></td>
+        <td><%= link_to 'Show', likes_tutors_by_subject %></td>
+        <td><%= link_to 'Edit', edit_likes_tutors_by_subject_path(likes_tutors_by_subject) %></td>
+        <td><%= link_to 'Destroy', likes_tutors_by_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Likes Tutors By Subject', new_likes_tutors_by_subject_path %>
