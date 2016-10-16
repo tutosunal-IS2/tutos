@@ -2,8 +2,12 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @subject.name %>
-  <br>whats up
+  <%= @subject.name %><br />
+  <strong>Faculty:</strong>
+  <%= @subject.faculty %><br />
+  <strong>Description:</strong>
+  <%= @subject.description %>
+
 </p>
 
 <%= link_to 'Edit', edit_subject_path(@subject) %> |

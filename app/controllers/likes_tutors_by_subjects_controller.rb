@@ -37,6 +37,10 @@ class LikesTutorsBySubjectsController < ApplicationController
     end
   end
 
+  def create_dd
+
+  end
+
   # PATCH/PUT /likes_tutors_by_subjects/1
   # PATCH/PUT /likes_tutors_by_subjects/1.json
   def update

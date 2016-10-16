@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
 
 
-  
+
   resources :likes_tutors_by_subjects
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :estudiantes do
     collection do
       get 'infoTutores', to: :infoTutores
+    end
+  end
+
+  resources :likes_tutors_by_subjects do
+    collection do
+      get 'create_dd', to: :create_dd
     end
   end
 
