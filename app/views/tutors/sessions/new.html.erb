@@ -1,4 +1,6 @@
-<h2>Log in</h2>
+<h2 style="color: white">Log in</h2>
+
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -18,9 +20,9 @@
     </div>
   <% end -%>
 
-  <div class="actions">
+  <div style="color: black" class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
+</body>
 <%= render "tutors/shared/links" %>
