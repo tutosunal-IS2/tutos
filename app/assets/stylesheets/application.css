@@ -12,6 +12,8 @@
  *
  *= require twitter/bootstrap
  *= require font-awesome
+ *= require fullcalendar
+ *= require daterangepicker
  *= require_tree .
  *= require_self
  *= require prettyphoto-rails

@@ -14,8 +14,8 @@
   <tbody>
     <% @likes_tutors_by_subjects.each do |likes_tutors_by_subject| %>
       <tr>
-        <td><%= likes_tutors_by_subject.tutor %></td>
-        <td><%= likes_tutors_by_subject.subject %></td>
+        <td><%= likes_tutors_by_subject.tutor.name %></td>
+        <td><%= likes_tutors_by_subject.subject.name %></td>
         <td><%= link_to 'Show', likes_tutors_by_subject %></td>
         <td><%= link_to 'Edit', edit_likes_tutors_by_subject_path(likes_tutors_by_subject) %></td>
         <td><%= link_to 'Destroy', likes_tutors_by_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>

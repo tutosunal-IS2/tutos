@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :tutor %>
+    <%= f.association :tutor, :include_blank => false,:label_method => lambda { |tutor| "#{tutor.id} | #{tutor.name}" } %>
     <%= f.association :subject %>
   </div>
 
