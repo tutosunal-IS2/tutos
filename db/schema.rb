@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016073449) do
+ActiveRecord::Schema.define(version: 20161017214751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20161016073449) do
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_likes_tutors_by_subjects_on_subject_id", using: :btree
     t.index ["tutor_id"], name: "index_likes_tutors_by_subjects_on_tutor_id", using: :btree
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "color"
+    t.integer  "likes_tutors_by_subject_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["likes_tutors_by_subject_id"], name: "index_schedules_on_likes_tutors_by_subject_id", using: :btree
   end
 
   create_table "students", force: :cascade do |t|
@@ -84,6 +95,10 @@ ActiveRecord::Schema.define(version: 20161016073449) do
     t.datetime "locked_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.string   "name"
     t.text     "description"
     t.index ["email"], name: "index_tutors_on_email", unique: true, using: :btree
@@ -92,4 +107,5 @@ ActiveRecord::Schema.define(version: 20161016073449) do
 
   add_foreign_key "likes_tutors_by_subjects", "subjects"
   add_foreign_key "likes_tutors_by_subjects", "tutors"
+  add_foreign_key "schedules", "likes_tutors_by_subjects"
 end

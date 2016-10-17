@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start: 2016-10-17 16:47:51
+  end: 2016-10-17 16:47:51
+  color: MyString
+  likes_tutors_by_subject: one
+
+two:
+  title: MyString
+  start: 2016-10-17 16:47:51
+  end: 2016-10-17 16:47:51
+  color: MyString
+  likes_tutors_by_subject: two
