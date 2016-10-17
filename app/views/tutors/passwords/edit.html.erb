@@ -4,17 +4,17 @@
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
+  <div style="color: white" class="field">
     <%= f.label :password, "New password" %><br />
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+    <font color="black"><%= f.password_field :password, autofocus: true, autocomplete: "off" %></font>
   </div>
 
-  <div class="field">
+  <div style="color: white" class="field">
     <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off" %></font>
   </div>
 
   <div  style="color: black" class="actions">
