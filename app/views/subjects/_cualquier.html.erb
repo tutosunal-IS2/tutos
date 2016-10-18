@@ -1,5 +1,20 @@
 
-<% @subjects.each do |t| %>
-  <br>
-  <%= link_to t.name , t %>
-<% end %>
+
+
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><h3></h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |t| %>
+      <tr>
+        <td><strong><h4><%= link_to t.name , t%></h4></strong></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
