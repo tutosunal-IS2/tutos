@@ -1,8 +1,29 @@
-<div>
-  <ul>
- <li><strong><%= @tutors.id %></strong></li>
- <li><strong><%= @tutors.email %></strong></li>
- <li><strong><%= @tutors.name %></strong></li>
- <li><strong><%= @tutors.description %></strong></li>
+<div align="left">
+<ul style="list-style-type:circle">
+ <li><strong>Email: <%= @tutors.email %></strong></li>
+ <li><strong>Nombre: <%= @tutors.name %></strong></li>
+ <li><strong>Descripción: <%= @tutors.description %></strong></li>
+
+<li>
+  <div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><h3>Materias </h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tutors.subjects.each do |subject| %>
+        <tr>
+          <td><strong><h4><%= link_to subject.name, subject%></h4></strong></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</li>
+
+
 </ul>
 </div>

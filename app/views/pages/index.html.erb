@@ -23,13 +23,13 @@
     			<li><%=link_to current_tutor.email,destroy_tutor_session_path, method: :delete%></li>
     		<%elsif admin_signed_in? %>
     			<li><%=link_to current_admin.email,destroy_admin_session_path, method: :delete%></li>
-    			
+
     		<% else %>
 	            <li><%= link_to "SERVICIOS", function_path %> </li>
 	            <li><%= link_to "EQUIPO", team_path %> </li>
-	            <li><%= link_to "ENTRAR", entrar_path %> </li>
+	            <li><%= link_to "ENTRAR", log_path %> </li>
 	            <li><%= link_to 'Sign in.', student_google_oauth2_omniauth_authorize_path%> </li>
-	            
+
 	            <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
 	            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
             <% end %>
@@ -215,7 +215,7 @@
   						<div class="row">
 
 						    <form controller="page" action="contactUS" class="form-signin" method="post" >
-						      
+
 						      <label for="emailField" class="sr-only">Email</label>
 						      <div class="input-group margin-bottom-sm">
 						        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>

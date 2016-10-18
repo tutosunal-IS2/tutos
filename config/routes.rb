@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   post "contactUS" => 'pages#contactUS'
 
 
-
+  devise_scope :tutor do get "log" => "devise/sessions#new" end
   get 'study' => 'estudiantes#renderEstudiantes'
 
   root "pages#index"

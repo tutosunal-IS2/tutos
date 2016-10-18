@@ -41,12 +41,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "INICIO", root_path %></li>
-            <li class="active"><%= link_to "SERVICIOS", function_path %> </li>
-            <li><%= link_to "EQUIPO", team_path %> </li>
-            <li><%= link_to "ENTRAR", entrar_path %> </li>
-            <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
+            <li><img class="img-circle" <%= image_tag(current_student.image_url,height: '60', width: '60') %></li>
+            <li><a>HOLA ! <%= current_student.name%></a></li>
+            <li class="active"><%= link_to "SALIR", student_destroy_student_omniauth_callback_path %> </li>
+
+
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -56,11 +56,13 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-8 col-lg-offset-2">
-			 <h4 ALIGN=center>HOLA <%= current_student.name%> !</b></h4>
+			 <h4 ALIGN=center>COMIENZA TUS TUTORIAS</b></h4>
+       <% if false %>
        <center>
          <img class="img-circle" <%= image_tag(current_student.image_url,height: '110', width: '110') %>
        </center>
-				<p ALIGN=center >COMIENZA CON TUS TUTORIAS</p>
+       <% end %>
+				<p ALIGN=center ></p>
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
@@ -73,7 +75,7 @@
 
 			<div align='center' class="col-lg-6">
 				<i class="fa fa-group"></i>
-				<h4>CONSULTAR TUTORES <%= link_to '<i class="fa fa-angle-down"></i>'.html_safe , root_path %>   </h4>
+				<h4>CONSULTA TUTORES <%= link_to '<i class="fa fa-angle-down"></i>'.html_safe , root_path %>   </h4>
 
 
 
@@ -89,22 +91,22 @@
     <tbody>
       <% @tutors.each do |tutor| %>
         <tr>
-          <td><strong><h4><%= tutor.email%></h4></strong></td>
+          <td><strong><h4><%= tutor.name%></h4></strong></td>
           <td><button type="button" class="btn btn-primary botonInfo" value="<%= tutor.id %>"><%="Más Información"%></button></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   </div>
-</section>
+
 
 				<p></p>
 			</div><!-- col-lg-4 -->
 
 			<div align='center' class="col-lg-6">
 				<i class="fa fa-table"></i>
-				<h4>PROGRAMAR TUTORIAS</h4>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+				<h4>PROGRAMA TUTORIAS</h4>
+				<p>Mira la informacion del tutor y elige la materia que te interesa reforzar.</p>
 
 
         <div id="infoTutor">
@@ -218,16 +220,18 @@
 <% end %>
 
 <br><br><br><br><br><br>
-	<div id="r">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h4>WE ARE STORYTELLERS. BRANDS ARE OUR SUBJECTS. DESIGN IS OUR VOICE.</h4>
-					<p>We believe ideas come from everyone, everywhere. At BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design.</p>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><! -- r wrap -->
+<div id="r">
+  <div class="container">
+    <div class="row centered">
+      <div align='center' class="col-lg-8 col-lg-offset-2">
+        <h4>SOMOS CONTADORES DE HISTORIAS.</h4>
+        <p>"Con la ayuda del tutor y con los trabajos realizados por medio de tutos unal ¡por fin! consigo pasar los parciales
+          y lo mejor es que ha subido mi PAPA, gracias TUTOS UNAL ;)".
+            - Richard Melo (Ingenieria de Sistemas).</p>
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</div><! -- r wrap -->
 
 
 	<!-- FOOTER -->

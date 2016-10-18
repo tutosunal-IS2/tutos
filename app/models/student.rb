@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-	devise :omniauthable, omniauth_providers: [:google_oauth2]
+	devise :omniauthable, omniauth_providers: [:google_oauth2,:destroy_student]
 
 
 	def self.from_omniauth(auth)
