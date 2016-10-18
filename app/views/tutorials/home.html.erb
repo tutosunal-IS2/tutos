@@ -14,21 +14,36 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 
-            <li class="active"><%= link_to "INICIO", root_path %></li>
 
-    		<li><%=link_to current_tutor.email,destroy_tutor_session_path, method: :delete%></li>
-	        <li><%= link_to "SERVICIOS", function_path %> </li>
-	        <li><%= link_to "EQUIPO", team_path %> </li>
-	        <li><%= link_to "ENTRAR", entrar_path %> </li>
-	        <li><%= link_to 'Sign in.', student_google_oauth2_omniauth_authorize_path%> </li>
+            <li><a>HOLA ! <%= current_tutor.email%></a></li>
 
-	        <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
-	        <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
+    		<li class="active"><%=link_to "SALIR",destroy_tutor_session_path, method: :delete%></li>
+
+
+
 
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
+
+    <div id="blue">
+  		<div class="container">
+  			<div class="row centered">
+  				<div class="col-lg-8 col-lg-offset-2">
+  			 <h4 ALIGN=center>COMIENZA CON TUS TUTORIAS</b></h4>
+         <p ALIGN=center >Revisa tu información y elige la materia que quieres dar monitoria </p>
+         <% if false %>
+         <center>
+           <img class="img-circle" <%= image_tag(current_student.image_url,height: '110', width: '110') %>
+         </center>
+         <% end %>
+  				<p ALIGN=center ></p>
+  				</div>
+  			</div><!-- row -->
+  		</div><!-- container -->
+  	</div><!-- blue wrap -->
+
 
 
 	<div class="container w">
@@ -37,11 +52,78 @@
       <div align='center'>
 			<div align='center' class="col-lg-6">
         <!-- http://fontawesome.io/icons/#web-application -->
-				<i class="fa fa-camera-retro"></i>
-				<h4>DESCRIPCIÓN</h4>
-				<p>Realizar una página web sobre tutorías, donde los estudiantes puedan entrar y consultar los tutores disponibles para ciertas materias y ver el horario que ellos disponen. Habrán dos diferentes usuarios con diferentes
-          funcionalidades (tutor y estudiante), también una sección de recursos donde se podrá consultar material y un foro de comentarios,donde se podrán realizar aportes por parte de los estudiantes..</p>
+				<i class="fa fa-bank"></i>
+				<h4>TU INFORMACIÓN</h4>
+				<p></p>
+
+        <div align="left">
+        <ul style="list-style-type:circle">
+         <li><strong>Email: <%= current_tutor.email %></strong></li>
+         <li><strong>Descripción: <%= current_tutor.description %></strong></li>
+
+
+         <li>
+           <div class="table-responsive">
+           <table class="table table-hover">
+             <thead>
+               <tr>
+                 <th><p1>Tus Materias </p1></th>
+               </tr>
+             </thead>
+             <tbody>
+               <% current_tutor.subjects.each do |subject| %>
+                 <tr>
+                   <td><strong><h4><%= subject.name %></h4></strong></td>
+
+                 </tr>
+               <% end %>
+             </tbody>
+           </table>
+           </div>
+         </li>
+
+
+
+        </div>
+
+
+
+
 			</div><!-- col-lg-4 -->
+
+
+      <div align='center' class="col-lg-6">
+        <!-- http://fontawesome.io/icons/#web-application -->
+        <i class="fa fa-search-plus"></i>
+        <h4>Busca y elige materias</h4>
+        <p></p>
+
+        <div align="left">
+
+
+
+
+        </div>
+
+
+
+
+      </div><!-- col-lg-4 -->
+
+
+      <style>
+      input[type=text] {
+      width: 30%;
+      padding: 3px 2px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid red;
+      border-radius: 4px;
+      }
+      </style>
+
+
+
 
       <input type="text" name="nombredelacaja" id="buscador">
       <div id="any" >
@@ -49,6 +131,8 @@
             <%= render "subjects/cualquier" %>
           <% end %>
       </div>
+
+
 
 
     </div>
