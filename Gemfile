@@ -10,7 +10,7 @@ gem 'font-awesome-rails'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
 
-gem 'pg'
+
 
 gem 'sprockets', '3.6.3'
 
@@ -69,3 +69,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-ui-rails'
 gem 'rails_admin', '~> 1.0'
+
+group :production, :staging do
+      gem 'pg'
+      gem 'rails_12factor'
+    end
