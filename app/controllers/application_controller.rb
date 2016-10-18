@@ -13,7 +13,12 @@ class ApplicationController < ActionController::Base
 
 
      def after_sign_in_path_for(resource)
-    	session["tutor_return_to"] || tutos_path
+
+      if tutor_signed_in?
+    	   session["tutor_return_to"] || tutos_path
+      elsif admin_signed_in?
+        session["admin_return_to"] || rails_admin_path
+      end
      end
 
 
@@ -22,8 +27,6 @@ class ApplicationController < ActionController::Base
       new_student_session_path
      end
 
-     def after_sign_in_path_for(resource)
-       session["admin_return_to"] || dashboard_path 
-     end
+
 
 end
