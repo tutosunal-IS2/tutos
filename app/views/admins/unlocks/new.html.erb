@@ -1,15 +1,15 @@
-<h2>Resend unlock instructions</h2>
+<h2 style="color: white">Reenviar instrucciones de desbloqueo</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.full_error :unlock_token %>
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+  <div style="color: white" class="field">
+    <%= f.label :email %><br />
+    <font color="black"><%= f.email_field :email, autofocus: true %></font>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Resend unlock instructions" %>
+  <div style="color: black" class="actions">
+    <%= f.submit "Reenviar instrucciones de desbloqueo" %>
   </div>
 <% end %>
 

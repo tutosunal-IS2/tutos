@@ -1,16 +1,17 @@
-<h2>Resend confirmation instructions</h2>
+<h2 style="color: white">Renviar instrucciones de confirmacion</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.full_error :confirmation_token %>
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <font color="black"><%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %></font>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Resend confirmation instructions" %>
+  <div  style="color: black" class="actions">
+    <%= f.submit "Renviar instrucciones de confirmacion" %>
   </div>
 <% end %>
+
 
 <%= render "admins/shared/links" %>

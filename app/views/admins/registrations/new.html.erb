@@ -1,16 +1,28 @@
-<h2>Sign up</h2>
+<h2 style="color: white">Registrese Administrador</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+  <div style="color: white" class="field">
+    <%= f.label :email %><br />
+    <font color="black"><%= f.email_field :email, autofocus: true %></font>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div style="color: white" class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <font color="black"><%= f.password_field :password, autocomplete: "off" %></font>
+  </div>
+
+  <div style="color: white" class="field">
+    <%= f.label :password_confirmation %><br />
+    <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off" %></font>
+  </div>
+
+  <div  style="color: black" class="actions">
+    <%= f.submit "Registrarse" %>
   </div>
 <% end %>
 
