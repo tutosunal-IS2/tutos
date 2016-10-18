@@ -1,15 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %><br />
-  <strong>Faculty:</strong>
-  <%= @subject.faculty %><br />
-  <strong>Description:</strong>
-  <%= @subject.description %>
+<div class="container">
+  <h2>Information</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Faculty</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @subject.name %></td>
+        <td><%= @subject.faculty %></td>
+        <td><%= @subject.description %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-</p>
-
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %> |
-<%= link_to 'Add subject', likes_tutors_by_subjects_path %>
+<div align='center' >
+  <div class="container"> <%= button_to('Edit', edit_subject_path(@subject), :class => 'btn btn-large btn-primary', :method => 'get') %></div></br>
+  <div class="container"><%= button_to('Back', subjects_path, :class => 'btn btn-success', :method => 'get') %></div></br>
+  <div class="container"><%= button_to('Add subject',  likes_tutors_by_subjects_path, :class => 'btn btn-warning', :method => 'get') %> </div>
+</div>
