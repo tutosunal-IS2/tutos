@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :schedules
   resources :likes_tutors_by_subjects
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/administrador', as: 'rails_admin'
 
   resources :estudiantes do
     collection do

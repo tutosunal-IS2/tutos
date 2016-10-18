@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
       new_student_session_path
      end
 
+     def after_sign_in_path_for(resource)
+       session["admin_return_to"] || dashboard_path 
+     end
+
 end

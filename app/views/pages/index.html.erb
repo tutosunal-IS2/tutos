@@ -27,10 +27,10 @@
     		<% else %>
 	            <li><%= link_to "SERVICIOS", function_path %> </li>
 	            <li><%= link_to "EQUIPO", team_path %> </li>
-	            <li><%= link_to "ENTRAR", log_path %> </li>
-	            <li><%= link_to 'Sign in.', student_google_oauth2_omniauth_authorize_path%> </li>
+	            <li><%= link_to "Tutor", log_path %> </li>
+	            <li><%= link_to 'Estudiante', student_google_oauth2_omniauth_authorize_path%> </li>
 
-	            <li><a href="/" ><i class="fa fa-google-plus"></i></a></li>
+	            <li><%= link_to "Admin", "/administrador" %> </li>
 	            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
             <% end %>
           </ul>
