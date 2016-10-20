@@ -1,6 +1,16 @@
-<h1>Editing Likes Tutors By Subject</h1>
+<div class="container">
+	<div class="page-header">
+	  <%= link_to likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+	    <span class="glyphicon glyphicon-list-alt"></span>
+	    Back
+	  <% end %>
+	  <%= link_to @likes_tutors_by_subject , class: 'btn btn-primary' do %>
+	    <span class="glyphicon glyphicon-info-sign"></span>
+	    Show
+	  <% end %>
+	  <h1>Editing Monitoria</h1>
+	</div>
+</div>
 
-<%= render 'form', likes_tutors_by_subject: @likes_tutors_by_subject %>
+<%= render 'form' %>
 
-<%= link_to 'Show', @likes_tutors_by_subject %> |
-<%= link_to 'Back', likes_tutors_by_subjects_path %>

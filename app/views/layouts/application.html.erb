@@ -64,7 +64,9 @@
               <% if student_signed_in?  %>
       			<li><%=link_to current_student.email,logout_path%></li>
       		<%elsif tutor_signed_in? %>
+            <li><%=link_to "panel", tutos_path%></li>
       			<li><%=link_to current_tutor.email,destroy_tutor_session_path, method: :delete%></li>
+
       		<%elsif admin_signed_in? %>
       			<li><%=link_to current_admin.email,destroy_admin_session_path, method: :delete%></li>
 

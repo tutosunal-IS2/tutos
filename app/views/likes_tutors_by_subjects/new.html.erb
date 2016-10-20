@@ -1,5 +1,11 @@
-<h1>New Likes Tutors By Subject</h1>
 
-<%= render 'form', likes_tutors_by_subject: @likes_tutors_by_subject %>
-
-<%= link_to 'Back', likes_tutors_by_subjects_path %>
+<div class="container">	
+	<div class="page-header">
+	  <%= link_to likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+	    <span class="glyphicon glyphicon-list-alt"></span>
+	    Back
+	  <% end %>
+	  <h1>New Monitoria</h1>
+	</div>
+<div>
+<%= render 'form' %>

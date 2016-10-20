@@ -1,13 +1,14 @@
-<%= simple_form_for(@likes_tutors_by_subject) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+	<%= simple_form_for(@likes_tutors_by_subject) do |f| %>
+	  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.association :tutor, :include_blank => false,:label_method => lambda { |tutor| "#{tutor.id} | #{tutor.name}" } %>
-    <%= f.association :subject %>
-  </div>
+	  <div class="form-inputs">
+	    <%= f.association :tutor, :include_blank => false,:label_method => lambda { |tutor| "#{tutor.id} | #{tutor.name}" } %>
+	    <%= f.association :subject %>
+	  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-
+	  <div class="form-actions">
+	    <%= f.button :submit , :class=>"btn btn-primary"%>
+	  </div>
+	<% end %>
+<div>

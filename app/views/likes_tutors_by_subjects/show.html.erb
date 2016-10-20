@@ -1,14 +1,49 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tutor:</strong>
-  <%= @likes_tutors_by_subject.tutor %>
-</p>
+<div class="container">
+  <div class="row">
+     <div class="page-header"> 
+      <div class="col-md-1">
+        <%= link_to likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          Back
+        <% end %>
+      </div>
+       <div class="col-md-1">
+        <%= link_to edit_likes_tutors_by_subject_path(@likes_tutors_by_subject), class: 'btn btn-primary' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          Edit
+        <% end %>
+      </div>
+      <!--<div class="col-md-1 col-md-offset-8">
+        <%= link_to likes_tutors_by_subjects_path(@subject), class: 'btn btn-warning' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          agregar materia
+        <% end %>
+      </div>-->
+     </div> 
+      
 
-<p>
-  <strong>Subject:</strong>
-  <%= @likes_tutors_by_subject.subject %>
-</p>
-
-<%= link_to 'Edit', edit_likes_tutors_by_subject_path(@likes_tutors_by_subject) %> |
-<%= link_to 'Back', likes_tutors_by_subjects_path %>
+  </div>
+<div class="row">
+<h1>Show subject</h1>
+  <!--<h2>Information</h2> -->
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tutor</th>
+          <th>Materia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @likes_tutors_by_subject.tutor.name %></td>
+          <td><%= @likes_tutors_by_subject.subject.name %></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>

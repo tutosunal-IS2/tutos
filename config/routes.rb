@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
 
   end
-  get 'tutorials/index'
+  
 
   devise_for :admins
   resources :tutoria
@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get 'tutos' => 'tutorials#home'
   post "contactUS" => 'pages#contactUS'
 
+   
 
   devise_scope :tutor do get "log" => "devise/sessions#new" end
   get 'study' => 'estudiantes#renderEstudiantes'
