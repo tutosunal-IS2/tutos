@@ -1,30 +1,59 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h2>Information</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Faculty</th>
-        <th>Objectives</th>
-        <th>Themes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @subject.name %></td>
-        <td><%= @subject.faculty %></td>
-        <td><%= @subject.objective %></td>
-        <td><%= @subject.theme %></td>
+  <div class="row">
+     <div class="page-header"> 
+      <div class="col-md-1">
+        <%= link_to subjects_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          Back
+        <% end %>
+      </div>
+       <div class="col-md-1">
+        <%= link_to edit_subject_path(@subject), class: 'btn btn-primary' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          Edit
+        <% end %>
+      </div>
+      <div class="col-md-1 col-md-offset-8">
+        <%= link_to likes_tutors_by_subjects_path(@subject), class: 'btn btn-warning' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          agregar materia
+        <% end %>
+      </div>
+     </div> 
+      
 
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </div>
+<div class="row">
+<h1>Show subject</h1>
+  <!--<h2>Information</h2> -->
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Faculty</th>
+          <th>Objectives</th>
+          <th>Themes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @subject.name %></td>
+          <td><%= @subject.faculty %></td>
+          <td><%= @subject.objective %></td>
+          <td><%= @subject.theme %></td>
 
-<div align='center' >
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>
+
+<!--<div align='center' >
   <div class="container"> <%= button_to('Edit', edit_subject_path(@subject), :class => 'btn btn-large btn-primary', :method => 'get') %></div></br>
   <div class="container"><%= button_to('Back', subjects_path, :class => 'btn btn-success', :method => 'get') %></div></br>
   <div class="container"><%= button_to('Add subject',  likes_tutors_by_subjects_path, :class => 'btn btn-warning', :method => 'get') %> </div>
-</div>
+</div> -->
