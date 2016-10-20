@@ -14,7 +14,7 @@
 
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <title>TUTOS-UNAL</title>
@@ -42,6 +42,46 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">TUT<i class="fa fa-circle"></i>S UNAL</a>
+            <a class="navbar-brand" href="/"><img <%= image_tag("maestrico3.png", :alt => "") %> </a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+              <li class="active"><%= link_to "INICIO", root_path %></li>
+
+
+              <% if student_signed_in?  %>
+      			<li><%=link_to current_student.email,logout_path%></li>
+      		<%elsif tutor_signed_in? %>
+      			<li><%=link_to current_tutor.email,destroy_tutor_session_path, method: :delete%></li>
+      		<%elsif admin_signed_in? %>
+      			<li><%=link_to current_admin.email,destroy_admin_session_path, method: :delete%></li>
+
+      		<% else %>
+  	            <li><%= link_to "SERVICIOS", function_path %> </li>
+  	            <li><%= link_to "EQUIPO", team_path %> </li>
+  	            <li><%= link_to "Tutor", log_path %> </li>
+  	            <li><%= link_to 'Estudiante', student_google_oauth2_omniauth_authorize_path%> </li>
+
+  	            <li><%= link_to "Admin", new_admin_session_path %> </li>
+  	            <li><a data-toggle="modal" data-target="#myModal" href="#myModal" ><i class="fa fa-envelope-o"></i></a></li>
+              <% end %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
   <%= yield %>
   <div id='remote_container'></div>
   </body>
