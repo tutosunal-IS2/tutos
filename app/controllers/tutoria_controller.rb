@@ -1,7 +1,6 @@
 class TutoriaController < ApplicationController
   before_action :set_tutorium, only: [:show, :edit, :update, :destroy]
 
-
   # GET /tutoria
   # GET /tutoria.json
   def index
