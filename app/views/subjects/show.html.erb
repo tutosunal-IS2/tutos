@@ -16,12 +16,24 @@
         <% end %>
       </div>
       <div class="col-md-1 col-md-offset-8">
-        <%= link_to likes_tutors_by_subjects_path(@subject), class: 'btn btn-warning' do %>
+        <!--<%= link_to likes_tutors_by_subjects_path(@subject), class: 'btn btn-warning' do %>
           <span class="glyphicon glyphicon-list-alt"></span>
           agregar materia
-        <% end %>
+        <% end %> -->
+        <%= form_for :likes_tutors_by_subject, :url => { :action => :create ,:controller=>"likes_tutors_by_subjects" } do |f| %>
+        
+
+            <div class="form-inputs">
+              <%= f.hidden_field :tutor_id,  :value => current_tutor.id %>
+              <%= f.hidden_field :subject_id, :value => @subject.id%>
+            </div>
+
+            <div class="form-actions">
+              <%= f.submit 'Add Materia' , :class=>"btn btn-primary"%>
+            </div>
+          <% end %>
       </div>
-     </div> 
+     
       
 
   </div>

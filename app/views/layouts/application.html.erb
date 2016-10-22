@@ -71,8 +71,8 @@
       			<li><%=link_to current_admin.email,destroy_admin_session_path, method: :delete%></li>
 
       		<% else %>
-  	            <li><%= link_to "SERVICIOS", function_path %> </li>
-  	            <li><%= link_to "EQUIPO", team_path %> </li>
+  	            <li><%= link_to "Servicio", function_path %> </li>
+  	            <li><%= link_to "Equipo", team_path %> </li>
   	            <li><%= link_to "Tutor", log_path %> </li>
   	            <li><%= link_to 'Estudiante', student_google_oauth2_omniauth_authorize_path%> </li>
 
@@ -83,8 +83,22 @@
           </div><!--/.nav-collapse -->
         </div>
       </div>
-
+  
   <%= yield %>
-  <div id='remote_container'></div>
+  
+   <div id='remote_container'></div>
+    <!-- FOOTER -->
+ 
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+      <div align="center">
+        <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
+        <p><a href="https://www.dropbox.com/s/r8ihm2quso0k7ie/Pol%C3%ADticas%20de%20Tutos%20-%20Unal.pdf?dl=0" class="btn btn-default" role="button">POLÍTICAS DE TUTOS - UNAL</a></p>
+            <p>Todos los derechos reservados © TUTOS-UNAL - 2016</p>
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- Footer -->
+  
   </body>
 </html>

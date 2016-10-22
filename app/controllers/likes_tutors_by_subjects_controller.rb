@@ -24,6 +24,7 @@ class LikesTutorsBySubjectsController < ApplicationController
   # POST /likes_tutors_by_subjects
   # POST /likes_tutors_by_subjects.json
   def create
+
     @likes_tutors_by_subject = LikesTutorsBySubject.new(likes_tutors_by_subject_params)
 
     respond_to do |format|

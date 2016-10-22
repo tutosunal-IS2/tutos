@@ -16,14 +16,45 @@
   			</div><!-- row -->
   		</div><!-- container -->
   	</div><!-- blue wrap -->
+  
 
-
-
-	<div class="container w">
-		<div class="row centered">
+	 <!-- <div class="container w"> -->
+	 	
+			<div class="row centered">
 			<br><br>
       <div align='center'>
-			<div align='center' class="col-lg-6">
+      		<nav class="col-lg-2" id="r">
+  			<ul class="nav nav-stacked nav-pills">
+  				<li class="nav-item">
+  				 <%= link_to  tutos_path, class: 'btn btn-default' do %>
+    			<span class="glyphicon glyphicon-home"></span>
+   				 Panel
+  				<% end %>
+  				</li>
+  				<li class="nav-item">
+  				 <%= link_to  subjects_path, class: 'btn btn-default' do %>
+    			<span class="glyphicon glyphicon-list-alt"></span>
+   				 Materias
+  				<% end %>
+  				</li>
+  				<li class="nav-item">
+  				 <%= link_to  likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+    			<span class="glyphicon glyphicon-book"></span>
+   				 Monitorias
+  				<% end %>
+  				</li>
+  				<li class="nav-item">
+  				 <%= link_to  schedules_path, class: 'btn btn-default' do %>
+    			<span class="glyphicon glyphicon-calendar"></span>
+   				 Horarios
+  				<% end %>
+  				</li>
+  				<br>
+  				<br> <br> <br> <br> 
+  			</ul>
+  		</nav>
+  		
+			<div align='center' class="col-lg-5">
         <!-- http://fontawesome.io/icons/#web-application -->
 				<i class="fa fa-bank"></i>
 				<h4>TU INFORMACIÓN</h4>
@@ -54,7 +85,7 @@
            </table>
            </div>
          </li>
-
+         </ul>
 
 
         </div>
@@ -65,7 +96,7 @@
 			</div><!-- col-lg-4 -->
 
 
-      <div align='center' class="col-lg-6">
+      <div align='center' class="col-lg-5">
         <!-- http://fontawesome.io/icons/#web-application -->
         <i class="fa fa-search-plus"></i>
         <h4>Busca y elige materias</h4>
@@ -77,7 +108,7 @@
 
 
         </div>
-
+        </div>
 
 
 
@@ -107,8 +138,9 @@
 
 
 
-
+      </div>
     </div>
+
 
 <% if false %>
 			<div class="col-lg-4">
@@ -119,7 +151,7 @@
 <% end %>
 		</div><!-- row -->
 		<br>
-	</div><!-- container -->
+	<!--</div><!-- container -->
 
 <% if false %>
 	<!-- PORTFOLIO SECTION -->
