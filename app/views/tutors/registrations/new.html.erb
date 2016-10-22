@@ -23,6 +23,16 @@
       <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off" %></font>
     </div>
 
+     <div  style="color: white" class="field">
+    <%= f.label :name %><br />
+    <font color="black"><%= f.text_field :name, autofocus: true %></font>
+  </div>
+
+  <div  style="color: white"  class="field">
+    <%= f.label :description %><br />
+    <font color="black"><%= f.text_area :description, autofocus: true %></font>
+  </div>
+    
     <div  style="color: black" class="actions">
       <%= f.submit "Registrarse" %>
     </div>
