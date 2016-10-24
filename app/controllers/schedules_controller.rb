@@ -4,7 +4,12 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-      @schedules = Schedule.where(start: params[:start]..params[:end])
+      #@schedules = Schedule.where(start: params[:start]..params[:end])
+      if tutor_signed_in?
+        @schedules =  Schedule.where(likes_tutors_by_subject_id: current_tutor.likes_tutors_by_subjects,start: params[:start]..params[:end])
+      elsif student_signed_in?
+        @schedules = Schedule.where(start: params[:start]..params[:end])
+      end
   end
 
   # GET /schedules/1
@@ -53,6 +58,6 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:title, :start, :end, :color, :like_for_tutors_by_subject_id)
+      params.require(:schedule).permit(:title, :start, :end, :color, :likes_tutors_by_subject_id)
     end
 end

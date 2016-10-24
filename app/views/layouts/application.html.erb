@@ -62,15 +62,17 @@
 
 
               <% if student_signed_in?  %>
-      			<li><%=link_to current_student.email,logout_path%></li>
-      		<%elsif tutor_signed_in? %>
-            <li><%=link_to "panel", tutos_path%></li>
-      			<li><%=link_to current_tutor.email,destroy_tutor_session_path, method: :delete%></li>
+      			     <li><img class="img-circle" <%= image_tag(current_student.image_url,height: '60', width: '60') %>></li>
+                 <li><a>HOLA ! <%= current_student.name%></a></li>
+                 <li class="active"><%= link_to "SALIR", student_destroy_student_omniauth_callback_path %> </li>
+      		    <%elsif tutor_signed_in? %>
+                 <li><%=link_to "panel", tutos_path%></li>
+      			     <li><%=link_to current_tutor.email,destroy_tutor_session_path, method: :delete%></li>
 
-      		<%elsif admin_signed_in? %>
-      			<li><%=link_to current_admin.email,destroy_admin_session_path, method: :delete%></li>
+      		    <%elsif admin_signed_in? %>
+      			     <li><%=link_to current_admin.email,destroy_admin_session_path, method: :delete%></li>
 
-      		<% else %>
+      		    <% else %>
   	            <li><%= link_to "Servicio", function_path %> </li>
   	            <li><%= link_to "Equipo", team_path %> </li>
   	            <li><%= link_to "Tutor", log_path %> </li>

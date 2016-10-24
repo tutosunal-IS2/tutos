@@ -20,22 +20,25 @@
           <span class="glyphicon glyphicon-list-alt"></span>
           agregar materia
         <% end %> -->
-        <%= form_for :likes_tutors_by_subject, :url => { :action => :create ,:controller=>"likes_tutors_by_subjects" } do |f| %>
-        
+        <% if tutor_signed_in? %>
+          <%= form_for :likes_tutors_by_subject, :url => { :action => :create ,:controller=>"likes_tutors_by_subjects" } do |f| %>
+          
 
-            <div class="form-inputs">
-              <%= f.hidden_field :tutor_id,  :value => current_tutor.id %>
-              <%= f.hidden_field :subject_id, :value => @subject.id%>
-            </div>
+              <div class="form-inputs">
+                <%= f.hidden_field :tutor_id,  :value => current_tutor.id %>
+                <%= f.hidden_field :subject_id, :value => @subject.id%>
+              </div>
 
-            <div class="form-actions">
-              <%= f.submit 'Add Materia' , :class=>"btn btn-primary"%>
-            </div>
-          <% end %>
+              <div class="form-actions">
+                <%= f.submit 'Add Materia' , :class=>"btn btn-warning"%>
+              </div>
+            <% end %>
+        <% end %>
       </div>
      
       
 
+  </div>
   </div>
 <div class="row">
 <h1>Show subject</h1>
