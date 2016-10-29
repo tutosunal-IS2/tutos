@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+# Google storage
+
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
+# FInish
+
 gem "jquery-slick-rails", '>= 1.6'
 
 gem 'rails_bootstrap_navbar'

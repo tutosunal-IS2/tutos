@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :archivos
   resources :schedules
   resources :likes_tutors_by_subjects
   mount RailsAdmin::Engine => '/administrador', as: 'rails_admin'
