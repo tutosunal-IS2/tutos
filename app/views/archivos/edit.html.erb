@@ -1,6 +1,16 @@
-<h1>Editing Archivo</h1>
+<div class="container">
+	<div class="page-header">
+	  <%= link_to archivos_path, class: 'btn btn-default' do %>
+	    <span class="glyphicon glyphicon-list-alt"></span>
+	    Back
+	  <% end %>
+	  <%= link_to @archivo , class: 'btn btn-primary' do %>
+	    <span class="glyphicon glyphicon-info-sign"></span>
+	    Show
+	  <% end %>
+	  <h1>Editing Archivo</h1>
+	</div>
+</div>
 
 <%= render 'form', archivo: @archivo %>
 
-<%= link_to 'Show', @archivo %> |
-<%= link_to 'Back', archivos_path %>

@@ -1,29 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Archivos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>File</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @archivos.each do |archivo| %>
-      <tr>
-        <td><%= archivo.name %></td>
-        <td><%= archivo.file %></td>
-        <td><%= link_to 'Show', archivo %></td>
-        <td><%= link_to 'Edit', edit_archivo_path(archivo) %></td>
-        <td><%= link_to 'Destroy', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container">
+  <div class="page-header">
+    <%= link_to new_archivo_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      New Archivo
     <% end %>
-  </tbody>
-</table>
+    <h1>Listing archivos</h1>
+  </div>
 
-<br>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+              <th>Nombre</th>
+              <th>Archivo</th>
+              <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<%= link_to 'New Archivo', new_archivo_path %>
+      <tbody>
+        <%= content_tag_for(:tr, @archivos) do |archivo| %>
+              <td><%= archivo.name %></td>
+              <td><%= archivo.file %></td>
+              <td><%= link_to 'Show', archivo %></td>
+          <td><%= link_to 'Edit', edit_archivo_path(archivo) %></td>
+          <td><%= link_to 'Destroy', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

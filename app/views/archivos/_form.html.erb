@@ -1,3 +1,4 @@
+<div class="container">
 <%= simple_form_for(@archivo) do |f| %>
   <%= f.error_notification %>
 
@@ -7,6 +8,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit "Subir Archivo", class: 'btn btn-primary' %>
   </div>
 <% end %>
+</div>

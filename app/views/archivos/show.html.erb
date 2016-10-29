@@ -1,14 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @archivo.name %>
-</p>
+<div class="container">
+  <div class="row">
+     <div class="page-header"> 
+      <div class="col-md-1">
+        <%= link_to archivos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          Back
+        <% end %>
+      </div>
+       <div class="col-md-1">
+        <%= link_to edit_archivo_path(@archivo), class: 'btn btn-primary' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          Edit
+        <% end %>
+      </div>
+     
+     </div> 
 
-<p>
-  <strong>File:</strong>
-  <%= @archivo.file %>
-</p>
-
-<%= link_to 'Edit', edit_archivo_path(@archivo) %> |
-<%= link_to 'Back', archivos_path %>
+  </div>
+<div class="row">
+<h1>Show archivo</h1>
+  <!--<h2>Information</h2> -->
+  <br>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Archivo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @archivo.name %></td>
+          <td><%= @archivo.file %></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>
+  <br> <br> <br>
