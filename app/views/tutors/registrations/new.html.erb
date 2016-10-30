@@ -32,11 +32,17 @@
     <%= f.label :description %><br />
     <font color="black"><%= f.text_area :description, autofocus: true %></font>
   </div>
-    
-    <div  style="color: black" class="actions">
-      <%= f.submit "Registrarse" %>
-    </div>
-  <% end %>
+  
 
+ 
+  <div style="color: black" class="field">
+    <%= f.file_field :avatar %>
+  </div>
+  <div style="color: black" class="actions">
+    <%= f.submit %>
+  </div>
+  <%end%>
+
+    
   <%= render "tutors/shared/links" %>
-</div>
+
