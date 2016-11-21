@@ -1,16 +1,16 @@
 
 <div class="row">
-  <h2 style="color: white">Registrarse</h2>
+  <h2 style="color: black">Registrarse</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div style="color: white" class="field">
+    <div style="color: black" class="field">
       <%= f.label :email %><br />
       <font color="black"><%= f.email_field :email, autofocus: true %></font>
     </div>
 
-    <div style="color: white" class="field">
+    <div style="color: black" class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -18,28 +18,30 @@
       <font color="black"><%= f.password_field :password, autocomplete: "off" %></font>
     </div>
 
-    <div style="color: white" class="field">
+    <div style="color: black" class="field">
       <%= f.label :password_confirmation %><br />
       <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off" %></font>
     </div>
 
-     <div  style="color: white" class="field">
+     <div  style="color: black" class="field">
     <%= f.label :name %><br />
     <font color="black"><%= f.text_field :name, autofocus: true %></font>
   </div>
 
-  <div  style="color: white"  class="field">
+  <div  style="color: black"  class="field">
     <%= f.label :description %><br />
     <font color="black"><%= f.text_area :description, autofocus: true %></font>
   </div>
   
 
  
-  <div style="color: black" class="field">
-    <%= f.file_field :avatar %>
+  <div style="color: black" class="field" align="right">
+    <br><%= f.file_field :avatar %><br>
   </div>
   <div style="color: black" class="actions">
+    
     <%= f.submit %>
+    <br><br>
   </div>
   <%end%>
 

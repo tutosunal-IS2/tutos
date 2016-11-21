@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029141656) do
+ActiveRecord::Schema.define(version: 20161120212549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20161029141656) do
   end
 
   create_table "archivos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "file"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "likes_tutors_by_subject_id"
+    t.index ["likes_tutors_by_subject_id"], name: "index_archivos_on_likes_tutors_by_subject_id", using: :btree
+  end
+
+  create_table "avatars", force: :cascade do |t|
     t.string   "name"
     t.string   "file"
     t.datetime "created_at", null: false
@@ -113,10 +122,12 @@ ActiveRecord::Schema.define(version: 20161029141656) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.text     "description"
+    t.text     "avatar"
     t.index ["email"], name: "index_tutors_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_tutors_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "archivos", "likes_tutors_by_subjects"
   add_foreign_key "likes_tutors_by_subjects", "subjects"
   add_foreign_key "likes_tutors_by_subjects", "tutors"
   add_foreign_key "schedules", "likes_tutors_by_subjects"
