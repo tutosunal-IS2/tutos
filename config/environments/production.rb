@@ -26,8 +26,8 @@ Rails.application.configure do
   config.assets.compile = true
   config.assets.digest = true
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-
-  config.serve_static_files = true
+  config.cache_classes = true
+ 
   
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
