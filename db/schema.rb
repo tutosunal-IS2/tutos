@@ -41,13 +41,6 @@ ActiveRecord::Schema.define(version: 20161120212549) do
     t.index ["likes_tutors_by_subject_id"], name: "index_archivos_on_likes_tutors_by_subject_id", using: :btree
   end
 
-  create_table "avatars", force: :cascade do |t|
-    t.string   "name"
-    t.string   "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "estudiantes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

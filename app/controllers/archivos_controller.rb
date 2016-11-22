@@ -1,10 +1,13 @@
 class ArchivosController < ApplicationController
   before_action :set_archivo, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_tutor!, except:[:index]
   # GET /archivos
   # GET /archivos.json
   def index
     @archivos = Archivo.all
+    unless student_signed_in? || tutor_signed_in?
+        redirect_to root_path, :alert => "Acceso denegado."
+      end
   end
 
   # GET /archivos/1
