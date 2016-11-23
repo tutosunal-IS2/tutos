@@ -78,6 +78,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-ui-rails'
 gem 'rails_admin', '~> 1.0'
 gem 'record_tag_helper', '~> 1.0'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap_form', '~> 2.5', '>= 2.5.2'
 
 group :production, :staging do
       gem 'pg'
