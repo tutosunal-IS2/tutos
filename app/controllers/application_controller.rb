@@ -4,7 +4,16 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   skip_before_filter :verify_authenticity_token
 
+  helper_method :current_subject
   protected
+
+
+
+    def current_subject(name)
+      @subject = Subject.where(name)
+    end
+
+
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :description, :avatar])
         devise_parameter_sanitizer.permit(:edit, keys: [:name, :description ])

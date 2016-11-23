@@ -48,7 +48,7 @@
 
 
           </ul>
-        </div><!--/.nav-collapse 
+        </div><!--/.nav-collapse
       </div>
     </div> -->
 
@@ -89,7 +89,24 @@
       </tr>
     </thead>
     <tbody>
+
+<tr>
+  <h3>Horarios Disponibles</h3>
+          <%=form_tag({controller: "schedules", action: "index"}, method: "get") do %>
+
+
+          <%= hidden_field_tag "subject", @tutors %>
+
+
+
+          <%= submit_tag "Ver ", :class => "btn btn-primary botonInfo" %> <% end %>
+
+</tr>
       <% @tutors.each do |tutor| %>
+
+
+
+
         <tr>
           <td><strong><h4><%= tutor.name%></h4></strong></td>
           <td><button type="button" class="btn btn-primary botonInfo" value="<%= tutor.id %>"><%="Más Información"%></button></td>

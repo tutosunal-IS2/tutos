@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_tutor!, except:[:index]
 
   # GET /schedules
   # GET /schedules.json
@@ -8,7 +9,12 @@ class SchedulesController < ApplicationController
       if tutor_signed_in?
         @schedules =  Schedule.where(likes_tutors_by_subject_id: current_tutor.likes_tutors_by_subjects,start: params[:start]..params[:end])
       elsif student_signed_in?
-        @schedules = Schedule.where(start: params[:start]..params[:end])
+
+
+
+        @schedules = Schedule.where( start: params[:start]..params[:end] )
+
+
       end
   end
 

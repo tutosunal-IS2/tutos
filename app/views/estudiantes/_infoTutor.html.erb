@@ -4,6 +4,7 @@
  <li><strong>Nombre: <%= @tutors.name %></strong></li>
  <li><strong>Descripción: <%= @tutors.description %></strong></li>
 
+
 <li>
   <div class="table-responsive">
   <table class="table table-hover">
@@ -16,6 +17,14 @@
       <% @tutors.subjects.each do |subject| %>
         <tr>
           <td><strong><h4><%= link_to subject.name, subject%></h4></strong></td>
+
+
+
+
+
+
+
+
 
         </tr>
       <% end %>
