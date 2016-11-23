@@ -1,0 +1,49 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+     <div class="page-header"> 
+      <div class="col-md-1">
+        <%= link_to appointments_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          Back
+        <% end %>
+      </div>
+       <div class="col-md-1">
+        <%= link_to edit_appointment_path(@appointment), class: 'btn btn-primary' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          Edit
+        <% end %>
+      </div>
+     
+     </div> 
+      
+
+  </div>
+<div class="row">
+<h1>Show appointment</h1>
+ 
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tutor</th>
+          <th>Subject</th>
+          <th>Student</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @appointment.tutor.name %></td>
+          <td><%= @appointment.subject.name %></td>
+          <td><%= @appointment.student.name %></td>
+          <td><%= @appointment.description %> </td>
+
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </div>
