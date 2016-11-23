@@ -1,10 +1,10 @@
-<h2  style="color: white">Edit <%= resource_name.to_s.humanize %></h2>
+<h2  style="color: black">Edit <%= resource_name.to_s.humanize %></h2>
 
 <body id=Sign>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div style="color: white"  class="field">
+  <div style="color: black"  class="field">
     <%= f.label :email %><br />
      <font color="black"><%= f.email_field :email, autofocus: true %></font>
   </div>
@@ -13,7 +13,7 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div  style="color: white"  class="field">
+  <div  style="color: black"  class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
    <font color="black"> <%= f.password_field :password, autocomplete: "off" %></font>
     <% if @minimum_password_length %>
@@ -22,22 +22,22 @@
     <% end %>
   </div>
 
-  <div  style="color: white" class="field">
+  <div  style="color: black" class="field">
     <%= f.label :password_confirmation %><br />
     <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off" %></font>
   </div>
 
-  <div  style="color: white" class="field">
+  <div  style="color: black" class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <font color="black"><%= f.password_field :current_password, autocomplete: "off" %></font>
   </div>
 
-  <div  style="color: white" class="field">
+  <div  style="color: black" class="field">
     <%= f.label :name %><br />
     <font color="black"><%= f.text_field :name, autofocus: true %></font>
   </div>
 
-  <div  style="color: white"  class="field">
+  <div  style="color: black"  class="field">
     <%= f.label :description %><br />
     <font color="black"><%= f.text_area :description, autofocus: true %></font>
   </div>
@@ -50,9 +50,9 @@
   </div>
 <% end %>
 
-<h3 style="color: white"  >CAncelar mi cuenta</h3>
+<h3 style="color: black"  >CAncelar mi cuenta</h3>
 
-<p style="color: white"  >Estas triste? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "ESta seguro?" }, method: :delete %></p>
+<p style="color: black"  >Estas triste? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "ESta seguro?" }, method: :delete %></p>
 
 <%= link_to "volver", :back %>
 </body>

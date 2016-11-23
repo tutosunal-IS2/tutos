@@ -1,9 +1,9 @@
-<h2 style="color: white">Reenviar instrucciones de desbloqueo</h2>
+<h2 style="color: black">Reenviar instrucciones de desbloqueo</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div style="color: white" class="field">
+  <div style="color: black" class="field">
     <%= f.label :email %><br />
     <font color="black"><%= f.email_field :email, autofocus: true %></font>
   </div>
