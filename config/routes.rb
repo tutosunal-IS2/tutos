@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :appointments
   resources :archivos
   resources :schedules
   resources :likes_tutors_by_subjects
