@@ -72,6 +72,6 @@ class ArchivosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def archivo_params
-      params.require(:archivo).permit(:name, :file)
+      params.require(:archivo).permit(:name, :file, :likes_tutors_by_subject_id)
     end
 end

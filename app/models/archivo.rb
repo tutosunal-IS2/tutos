@@ -1,4 +1,5 @@
 class Archivo < ActiveRecord::Base
+	belongs_to :likes_tutors_by_subject
 	mount_uploader :file, ArchivoUploader
 	validate :file_size_validation
 	def file_size_validation

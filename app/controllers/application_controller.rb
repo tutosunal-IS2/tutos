@@ -32,9 +32,9 @@ class ApplicationController < ActionController::Base
 
 
 
-     def new_session_path(scope)
-      new_student_session_path
-     end
+    # def new_session_path(scope)
+      #new_session_path
+     #end
 
 
 
