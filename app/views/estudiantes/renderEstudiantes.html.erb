@@ -52,33 +52,70 @@
       </div>
     </div> -->
 
-	<div id="blue">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-			 <h4 ALIGN=center>COMIENZA TUS TUTORIAS</b></h4>
+  <div id="blue">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+       <h4 ALIGN=center>COMIENZA TUS TUTORIAS</b></h4>
        <% if false %>
        <center>
          <img class="img-circle" <%= image_tag(current_student.image_url,height: '110', width: '110') %>
        </center>
        <% end %>
-				<p ALIGN=center ></p>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- blue wrap -->
-
-
-	<div class="container w">
-		<div class="row centered">
-			<br><br>
-
-			<div align='center' class="col-lg-6">
-				<i class="fa fa-group"></i>
-				<h4>CONSULTA TUTORES <%= link_to '<i class="fa fa-angle-down"></i>'.html_safe , root_path %>   </h4>
+        <p ALIGN=center ></p>
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- blue wrap -->
 
 
 
+
+      <div class="row centered">
+      <br><br>
+      <div align='center'>
+          <nav class="col-lg-2" id="r">
+        <ul class="nav nav-stacked nav-pills">
+          <li class="nav-item">
+           <%= link_to  tutos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-home"></span>
+           Panel
+          <% end %>
+          <li class="nav-item">
+           <%= link_to  archivos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-file"></span>
+           Archivos
+          <% end %>
+          </li>
+          
+          <li class="nav-item">
+           <%= link_to  appointments_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+           Citas
+           <% end %>
+          </li>
+          </li>
+          
+          <br>
+          <br> <br> <br> <br> 
+        </ul>
+      </nav>
+
+  
+
+  <div class="container w">
+    <div class="row centered">
+      <br><br>
+
+      <div align='center' class="col-lg-5">
+
+
+
+
+        <i class="fa fa-group"></i>
+        <h4>CONSULTA TUTORES <%= link_to '<i class="fa fa-angle-down"></i>'.html_safe , root_path %>   </h4>
+
+      
 
   <div class="table-responsive">
   <table class="table table-striped">
@@ -117,13 +154,13 @@
   </div>
 
 
-				<p></p>
-			</div><!-- col-lg-4 -->
+        <p></p>
+      </div><!-- col-lg-4 -->
 
-			<div align='center' class="col-lg-6">
-				<i class="fa fa-table"></i>
-				<h4>PROGRAMA TUTORIAS</h4>
-				<p>Mira la informacion del tutor y elige la materia que te interesa reforzar.</p>
+      <div align='center' class="col-lg-5">
+        <i class="fa fa-table"></i>
+        <h4>PROGRAMA TUTORIAS</h4>
+        <p>Mira la informacion del tutor y elige la materia que te interesa reforzar.</p>
 
 
         <div id="infoTutor">
@@ -137,30 +174,30 @@
 
 
 <% if false %>
-			<div class="col-lg-4">
-				<i class="fa fa-shopping-cart"></i>
-				<h4>E-COMMERCE</h4>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-			</div><!-- col-lg-4 -->
+      <div class="col-lg-4">
+        <i class="fa fa-shopping-cart"></i>
+        <h4>E-COMMERCE</h4>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+      </div><!-- col-lg-4 -->
 
-			<div class="col-lg-4">
-				<i class="fa fa-cloud"></i>
-				<h4>CLOUD SERVICES</h4>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-			</div><!-- col-lg-4 -->
+      <div class="col-lg-4">
+        <i class="fa fa-cloud"></i>
+        <h4>CLOUD SERVICES</h4>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+      </div><!-- col-lg-4 -->
 
 <% end %>
-		</div><!-- row -->
-	</div><!-- container -->
+    </div><!-- row -->
+  </div><!-- container -->
 
 <% if false %>
-	<!-- PRICING SECTION -->
-	<div id="dg">
-		<div class="container">
-			<div class="row centered">
-				<h4>PRICING PLANS</h4>
-				<br>
-				<div class="col-lg-4">
+  <!-- PRICING SECTION -->
+  <div id="dg">
+    <div class="container">
+      <div class="row centered">
+        <h4>PRICING PLANS</h4>
+        <br>
+        <div class="col-lg-4">
                     <!-- START PRICING TABLE -->
                     <div class="pricing-option">
                         <div class="pricing-top">
@@ -181,9 +218,9 @@
                         <a href="index.html#" class="pricing-signup">Sign up</a>
                     </div><!-- /pricing-option -->
                     <!-- END PRICING TABLE -->
-				</div><!-- /col -->
+        </div><!-- /col -->
 
-				<div class="col-lg-4">
+        <div class="col-lg-4">
                     <!-- START PRICING TABLE -->
                     <div class="pricing-option">
                         <div class="pricing-top">
@@ -204,9 +241,9 @@
                         <a href="index.html#" class="pricing-signup">Sign up</a>
                     </div><!-- /pricing-option -->
                     <!-- END PRICING TABLE -->
-				</div><!-- /col -->
+        </div><!-- /col -->
 
-				<div class="col-lg-4">
+        <div class="col-lg-4">
                     <!-- START PRICING TABLE -->
                     <div class="pricing-option">
                         <div class="pricing-top">
@@ -228,11 +265,11 @@
                         <a href="index.html#" class="pricing-signup">Sign up</a>
                     </div><!-- /pricing-option -->
                     <!-- END PRICING TABLE -->
-				</div><!-- /col -->
-			</div><!-- row -->
+        </div><!-- /col -->
+      </div><!-- row -->
 
-		</div><!-- container -->
-	</div><!-- DG -->
+    </div><!-- container -->
+  </div><!-- DG -->
 
 <% end %>
 
@@ -251,47 +288,47 @@
 </div><! -- r wrap -->
 
 
-	<!-- FOOTER -->
-	<div id="f">
-		<div class="container">
-			<div class="row centered">
-				<a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
+  <!-- FOOTER -->
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+        <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-dribbble"></i></a>
         <p>Todos los derechos reservados © TUTOS-UNAL - 2016 </p>
 
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- Footer -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- Footer -->
 
 
-	<!-- MODAL FOR CONTACT -->
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">contact us</h4>
-	      </div>
-	      <div class="modal-body">
-		        <div class="row centered">
-		        	<p>We are available 24/7, so don't hesitate to contact us.</p>
-		        	<p>
-		        		Somestreet Ave, 987<br/>
-						London, UK.<br/>
-						+44 8948-4343<br/>
-						hi@blacktie.co
-		        	</p>
-		        	<div id="mapwrap">
+  <!-- MODAL FOR CONTACT -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">contact us</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row centered">
+              <p>We are available 24/7, so don't hesitate to contact us.</p>
+              <p>
+                Somestreet Ave, 987<br/>
+            London, UK.<br/>
+            +44 8948-4343<br/>
+            hi@blacktie.co
+              </p>
+              <div id="mapwrap">
                 <iframe height="300" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.es/maps?t=m&amp;ie=UTF8&amp;ll=52.752693,22.791016&amp;spn=67.34552,156.972656&amp;z=2&amp;output=embed"></iframe>
-					</div>
-		        </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+          </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 
     <!-- Bootstrap core JavaScript
