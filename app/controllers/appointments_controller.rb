@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_student!, except:[:index]
-  before_action :authenticate_tutor!, only:[:index]
+  before_action :authenticate_student!, except:[:index,:destroy]
+  before_action :authenticate_tutor!, only:[:index,:destroy]
 
 
   # GET /appointments
@@ -64,6 +64,7 @@ class AppointmentsController < ApplicationController
   # DELETE /appointments/1.json
   def destroy
     @appointment.destroy
+    AppointmentMailer.appointment_deleted(@appointment).deliver
     respond_to do |format|
       format.html { redirect_to appointments_url, notice: 'Appointment was successfully destroyed.' }
       format.json { head :no_content }
