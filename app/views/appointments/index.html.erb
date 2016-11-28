@@ -1,11 +1,59 @@
 
-<div class="container">
+<div align='center' class="col-lg-8">
+<nav class="col-lg-5" id="r">
+<ul class="nav nav-stacked nav-pills">
+<li class="nav-item">
+ <%= link_to  tutos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-home"></span>
+ Panel
+<% end %>
+<li class="nav-item">
+ <%= link_to  archivos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-file"></span>
+ Archivos
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Materias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-book"></span>
+ Monitorias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  schedules_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-calendar"></span>
+ Horarios
+<% end %>
+<li class="nav-item">
+ <%= link_to  appointments_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Citas
+ <% end %>
+</li>
+</li>
+
+<br>
+<br> <br> <br> <br>
+</ul>
+</nav>
+
+
+</div>
+
+
+<div class="container" align='left'>
   <div class="page-header">
     <%= link_to new_appointment_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-plus"></span>
       New appointment
     <% end %>
-    <h1>Listing appointment</h1>
+    <h1>Lista de Citas</h1>
   </div>
 
   <div class="table-responsive">

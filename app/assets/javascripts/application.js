@@ -16,7 +16,7 @@
 //= require jquery.easing
 //= require jquery-ui
 //= require twitter/bootstrap
-//= require turbolinks
+
 //= require moment
 //= require fullcalendar
 //= require daterangepicker
