@@ -1,10 +1,17 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_student!, except:[:index]
+  before_action :authenticate_tutor!, only:[:index]
+
 
   # GET /appointments
   # GET /appointments.json
   def index
+    if tutor_signed_in?
+      @appointments =  Appointment.where(tutor_id: current_tutor)
+    else
     @appointments = Appointment.all
+  end
   end
 
   # GET /appointments/1
