@@ -1,5 +1,91 @@
 <!--<p id="notice"><%= notice %></p> -->
-<div class="container">
+
+<div class="row centered">
+<% if tutor_signed_in? %>
+	<nav class="col-sm-2" id="r" >
+	<ul class="nav nav-stacked nav-pills">
+	<li class="nav-item" align="center">
+	 <%= link_to  tutos_path, class: 'btn btn-default' do %>
+	<span class="glyphicon glyphicon-home"></span>
+	 Panel
+	<% end %>
+	</li>
+	<li class="nav-item">
+	 <%= link_to  archivos_path, class: 'btn btn-default' do %>
+	<span class="glyphicon glyphicon-file"></span>
+	 Archivos
+	<% end %>
+	</li>
+	<li class="nav-item">
+	 <%= link_to  subjects_path, class: 'btn btn-default' do %>
+	<span class="glyphicon glyphicon-list-alt"></span>
+	 Materias
+	<% end %>
+	</li>
+	<li class="nav-item">
+	 <%= link_to  likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+	<span class="glyphicon glyphicon-book"></span>
+	 Monitorias
+	<% end %>
+	</li>
+	<li class="nav-item">
+	 <%= link_to  schedules_path, class: 'btn btn-default' do %>
+	<span class="glyphicon glyphicon-calendar"></span>
+	 Horarios
+	<% end %>
+	</li>
+	<li class="nav-item">
+	 <%= link_to  appointments_path, class: 'btn btn-default' do %>
+	<span class="glyphicon glyphicon-list-alt"></span>
+	 Citas
+	 <% end %>
+	</li>
+
+
+	<br>
+	<br> <br> <br> <br>
+	</ul>
+	</nav>
+
+<%  elsif student_signed_in? %>
+<br><br>
+      <div align='center'>
+          <nav class="col-lg-2" id="r">
+        <ul class="nav nav-stacked nav-pills">
+          <li class="nav-item">
+           <%= link_to  tutos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-home"></span>
+           Panel
+          <% end %>
+          <li class="nav-item">
+           <%= link_to  archivos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-file"></span>
+           Archivos
+          <% end %>
+          </li>
+
+          <li class="nav-item">
+           <%= link_to  new_appointment_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+           Citas
+           <% end %>
+          </li>
+          </li>
+
+          <br>
+          <br> <br> <br> <br>
+        </ul>
+      </nav>
+
+      <% else %>
+      <%  end %>
+
+<div class="col-lg-10">
+
 	<h2> Mis tutorias</h2>
+	<br>
 	<div class="calendar"></div>
+
 </div>
+</div>
+
