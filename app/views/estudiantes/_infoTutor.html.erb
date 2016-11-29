@@ -14,11 +14,11 @@
       </tr>
     </thead>
     <tbody>
-      <% @tutors.subjects.each do |subject| %>   /schedules/:id/filtrar(.:format)
+      <% @tutors.subjects.each do |subject| %> 
         <tr>
           <td><strong><h4><%= link_to subject.name, subject%></h4></strong></td>
           <td><strong><h4><%= link_to "ver horarios","/schedules/#{subject.id}/filtrar", :class =>"btn btn-primary"%></h4></strong></td>
-          <td>
+          <td><strong><h4><%= link_to "ver archivos",archivos_path(:id => subject.id), :class =>"btn btn-success"%></h4></strong> </td>
 
 
         </tr>

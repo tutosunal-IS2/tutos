@@ -8,6 +8,14 @@ class ArchivosController < ApplicationController
     unless student_signed_in? || tutor_signed_in?
         redirect_to root_path, :alert => "Acceso denegado."
       end
+    if student_signed_in? && params[:id]!= nil
+
+        @subject =Subject.find(params[:id])
+        @archivos = Archivo.where(likes_tutors_by_subject_id: @subject.likes_tutors_by_subjects)
+    else
+       @archivos = Archivo.all 
+    end
+
   end
 
   # GET /archivos/1
