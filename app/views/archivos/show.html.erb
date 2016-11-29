@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-     <div class="page-header"> 
+     <div class="page-header">
       <div class="col-md-1">
         <%= link_to archivos_path, class: 'btn btn-default' do %>
           <span class="glyphicon glyphicon-list-alt"></span>
@@ -15,12 +15,12 @@
           Edit
         <% end %>
       </div>
-     
-     </div> 
+
+     </div>
 
   </div>
 <div class="row">
-<h1>Show archivo</h1>
+<h1>Ver archivo</h1>
   <!--<h2>Information</h2> -->
   <br>
   <div class="table-responsive">
@@ -34,7 +34,8 @@
       <tbody>
         <tr>
           <td><%= @archivo.name %></td>
-          <td><%= @archivo.file %></td>
+
+          <td align="center"><embed src=<%= @archivo.file %> width="900" height="500" type='application/pdf'></td>
         </tr>
       </tbody>
     </table>

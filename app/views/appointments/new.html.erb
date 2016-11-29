@@ -1,10 +1,92 @@
-<div class="container">	
-	<div class="page-header">
+<% if tutor_signed_in? %>
+<nav class="col-lg-2" id="r">
+<ul class="nav nav-stacked nav-pills">
+<li class="nav-item">
+ <%= link_to  tutos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-home"></span>
+ Panel
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  archivos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-file"></span>
+ Archivos
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Materias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-book"></span>
+ Monitorias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  schedules_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-calendar"></span>
+ Horarios
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  appointments_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Citas
+ <% end %>
+</li>
+
+
+<%  elsif student_signed_in? %>
+<br><br>
+      <div align='center'>
+          <nav class="col-lg-2" id="r">
+        <ul class="nav nav-stacked nav-pills">
+          <li class="nav-item">
+           <%= link_to  study_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-home"></span>
+           Panel
+          <% end %>
+          <li class="nav-item">
+           <%= link_to  archivos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-file"></span>
+           Archivos
+          <% end %>
+          </li>
+
+          <li class="nav-item">
+           <%= link_to  new_appointment_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+           Citas
+           <% end %>
+          </li>
+          </li>
+
+
+
+        </ul>
+      </nav>
+
+      <% else %>
+      <%  end %>
+
+
+
+</ul>
+</nav>
+
+
+
+<div class="col-lg-10">
+	<div class="page-header" align="left">
 	  <%= link_to appointments_path, class: 'btn btn-default' do %>
-	    <span class="glyphicon glyphicon-list-alt"></span>
-	    Back
+	    <span  class="glyphicon glyphicon-list-alt"></span>
+	    Atras
 	  <% end %>
-	  <h1>New appointment</h1>
+	  <h1 align="left">        Nueva Cita</h1>
 	</div>
-<div>
+<div class="page-header">
 <%= render 'form' %>
+</div>

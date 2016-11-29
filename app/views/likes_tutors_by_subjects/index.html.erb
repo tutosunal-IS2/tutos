@@ -1,17 +1,66 @@
+<nav class="col-lg-2" id="r">
+<ul class="nav nav-stacked nav-pills">
+<li class="nav-item">
+ <%= link_to  tutos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-home"></span>
+ Panel
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  archivos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-file"></span>
+ Archivos
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Materias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-book"></span>
+ Monitorias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  schedules_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-calendar"></span>
+ Horarios
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  appointments_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Citas
+ <% end %>
+</li>
+
+
+<br>
+<br> <br> <br> <br>
+</ul>
+</nav>
+
+
+
 
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="col-lg-10">
+
   <div class="page-header">
     <%= link_to new_likes_tutors_by_subject_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-plus"></span>
-      New Monitoria
+      Nueva Monitoria
     <% end %>
     <%= link_to schedules_path, class: 'btn btn-warning' do %>
       <span class="glyphicon glyphicon-plus"></span>
-      Add Schedule
+      Agregar Calendario
     <% end %>
-    <h1>Listing monitoria</h1>
+    <br> <br>
+    <h1 align="center">Lista de monitorias</h1>
   </div>
 
   <div class="table-responsive">
@@ -30,9 +79,9 @@
         <%= content_tag_for(:tr, @likes_tutors_by_subjects) do |likes_tutors_by_subject| %>
               <td><%= likes_tutors_by_subject.tutor.name %></td>
               <td><%= likes_tutors_by_subject.subject.name %></td>
-              <td><%= link_to 'Show', likes_tutors_by_subject %></td>
-              <td><%= link_to 'Edit', edit_likes_tutors_by_subject_path(likes_tutors_by_subject) %></td>
-              <td><%= link_to 'Destroy', likes_tutors_by_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Ver', likes_tutors_by_subject %></td>
+              <td><%= link_to 'Editar', edit_likes_tutors_by_subject_path(likes_tutors_by_subject) %></td>
+              <td><%= link_to 'Eliminar', likes_tutors_by_subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tbody>
     </table>

@@ -1,12 +1,95 @@
+
+
+<% if tutor_signed_in? %>
+<nav class="col-lg-2" id="r">
+<ul class="nav nav-stacked nav-pills">
+<li class="nav-item">
+ <%= link_to  tutos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-home"></span>
+ Panel
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  archivos_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-file"></span>
+ Archivos
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Materias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  likes_tutors_by_subjects_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-book"></span>
+ Monitorias
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  schedules_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-calendar"></span>
+ Horarios
+<% end %>
+</li>
+<li class="nav-item">
+ <%= link_to  appointments_path, class: 'btn btn-default' do %>
+<span class="glyphicon glyphicon-list-alt"></span>
+ Citas
+ <% end %>
+</li>
+
+
+<%  elsif student_signed_in? %>
+<br><br>
+      <div align='center'>
+          <nav class="col-lg-2" id="r">
+        <ul class="nav nav-stacked nav-pills">
+          <li class="nav-item">
+           <%= link_to  study_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-home"></span>
+           Panel
+          <% end %>
+          <li class="nav-item">
+           <%= link_to  archivos_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-file"></span>
+           Archivos
+          <% end %>
+          </li>
+
+          <li class="nav-item">
+           <%= link_to  new_appointment_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+           Citas
+           <% end %>
+          </li>
+          </li>
+
+
+
+        </ul>
+      </nav>
+
+      <% else %>
+      <%  end %>
+
+
+
+</ul>
+</nav>
+
+
 <p id="notice"><%= notice %></p>
 
-<div class="container">
+<div class="col-lg-10">
   <div class="page-header">
     <%= link_to new_archivo_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-plus"></span>
-      New Archivo
+      Nuevo Archivo
     <% end %>
-    <h1>Listing archivos</h1>
+    <br> <br>
+    <h1 align="center">Lista de archivos</h1>
   </div>
 
   <div class="table-responsive">
@@ -24,17 +107,12 @@
       <tbody>
         <%= content_tag_for(:tr, @archivos) do |archivo| %>
               <td><%= archivo.name %></td>
-              <td><%= archivo.file %></td>
-              <td><%= link_to 'Show', archivo %></td>
-          <td><%= link_to 'Edit', edit_archivo_path(archivo) %></td>
-          <td><%= link_to 'Destroy', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td align="center"><embed src=<%= archivo.file %> width="700" height="330" type='application/pdf'></td>
+              <td><%= link_to 'Ver', archivo %></td>
+          <td><%= link_to 'Editar', edit_archivo_path(archivo) %></td>
+          <td><%= link_to 'Eliminar', archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
-
-<p align="center">
-  <embed src="https://commondatastorage.googleapis.com/tutos_unal_storage/uploads/archivo/file/3/Proyecto_Lenguajes_de_programaci_n.pdf" width="700" height="385" type='application/pdf'>
-</p>
-
