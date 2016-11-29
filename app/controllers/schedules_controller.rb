@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_tutor!, except:[:index]
+  before_action :authenticate_tutor!, except:[:index, :filtrar]
 
 
 
@@ -15,10 +15,9 @@ class SchedulesController < ApplicationController
         @schedules =  Schedule.where(likes_tutors_by_subject_id: current_tutor.likes_tutors_by_subjects,start: params[:start]..params[:end])
       elsif student_signed_in?
        
-       
-        #@subject =Subject.find(params[:param1].to_i)
-        @subject =Subject.find(3)
-
+        @subject = Subject.find(session[:subject])
+        #p "#{session[:subject]} aaaaaa"
+        #@subject =Subject.find(3)
         @schedules = Schedule.where(likes_tutors_by_subject_id: @subject.likes_tutors_by_subjects , start: params[:start]..params[:end] )
        
       end
@@ -62,6 +61,11 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def filtrar
+    
+    session[:subject] = params[:id]
+    redirect_to schedules_path
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule

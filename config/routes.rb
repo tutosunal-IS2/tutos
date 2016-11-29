@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :appointments
   resources :archivos
-  resources :schedules
+  resources :schedules do
+    member do
+      get 'filtrar', to: :filtrar
+    end
+  end
   resources :likes_tutors_by_subjects
   mount RailsAdmin::Engine => '/administrador', as: 'rails_admin'
 
