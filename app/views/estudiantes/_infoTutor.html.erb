@@ -17,14 +17,7 @@
       <% @tutors.subjects.each do |subject| %>
         <tr>
           <td><strong><h4><%= link_to subject.name, subject%></h4></strong></td>
-
-
-
-
-
-
-
-
+          <td><strong><h4><%= link_to "ver horarios", "/schedules?param1=#{subject.id}", :class =>"btn btn-primary"%></h4></strong></td>
 
         </tr>
       <% end %>

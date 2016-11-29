@@ -2,6 +2,11 @@ class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_tutor!, except:[:index]
 
+
+
+
+  
+
   # GET /schedules
   # GET /schedules.json
   def index
@@ -9,12 +14,13 @@ class SchedulesController < ApplicationController
       if tutor_signed_in?
         @schedules =  Schedule.where(likes_tutors_by_subject_id: current_tutor.likes_tutors_by_subjects,start: params[:start]..params[:end])
       elsif student_signed_in?
+       
+       
+        #@subject =Subject.find(params[:param1].to_i)
+        @subject =Subject.find(3)
 
-
-
-        @schedules = Schedule.where( start: params[:start]..params[:end] )
-
-
+        @schedules = Schedule.where(likes_tutors_by_subject_id: @subject.likes_tutors_by_subjects , start: params[:start]..params[:end] )
+       
       end
   end
 
@@ -60,10 +66,13 @@ class SchedulesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
       @schedule = Schedule.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
       params.require(:schedule).permit(:title, :start, :end, :color, :likes_tutors_by_subject_id)
     end
+
+    
 end
