@@ -3,18 +3,18 @@
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div style="color: black" class="field">
+  <div  class="form-group">
     <%= f.label :email %><br />
-    <font color="black"><%= f.email_field :email, autofocus: true %></font>
+    <font color="black"><%= f.email_field :email, autofocus: true, class: "form-control" %></font>
   </div>
 
-  <div style="color: black" class="field">
+  <div style="color: black" class="form-group">
     <%= f.label :password %><br />
-    <font color="black"><%= f.password_field :password, autocomplete: "off" %></font>
+    <font color="black"><%= f.password_field :password, autocomplete: "off", class: "form-control" %></font>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div style="color: black" class="field">
+    <div style="color: black" class="checkbox">
       <%= f.check_box :remember_me %>
    <%= f.label :remember_me %>
     </div>
@@ -22,7 +22,7 @@
 
   <div style="color: black" class="actions">
   <br>
-    <%= f.submit "Entrar" %>
+    <%= f.submit "Entrar" , class: "btn btn-danger btn-block"%>
     <br>
     
   </div>

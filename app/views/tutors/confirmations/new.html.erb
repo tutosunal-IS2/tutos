@@ -1,15 +1,15 @@
-<h2 style="color: black">REenviar instrucciones de confirmacion</h2>
+<h2 style="color: black">Reenviar instrucciones de confirmacion</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <font color="black"><%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %></font>
+    <font color="black"><%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control"%></font>
   </div>
 
   <div  style="color: black" class="actions">
-    <%= f.submit "Renviar instrucciones de confirmacion" %>
+    <%= f.submit "Renviar instrucciones de confirmacion", class: "btn btn-danger btn-block" %>
   </div>
 <% end %>
 

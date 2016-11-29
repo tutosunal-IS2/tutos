@@ -3,26 +3,26 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div style="color: black" class="field">
+  <div style="color: black" class="form-group">
     <%= f.label :email %><br />
-    <font color="black"><%= f.email_field :email, autofocus: true %></font>
+    <font color="black"><%= f.email_field :email, autofocus: true, class: "form-control" %></font>
   </div>
 
-  <div style="color: black" class="field">
+  <div style="color: black" class="form-group">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <font color="black"><%= f.password_field :password, autocomplete: "off" %></font>
+    <font color="black"><%= f.password_field :password, autocomplete: "off" , class: "form-control"%></font>
   </div>
 
-  <div style="color: black" class="field">
+  <div style="color: black" class="form-group">
     <%= f.label :password_confirmation %><br />
-    <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off" %></font>
+    <font color="black"><%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %></font>
   </div>
 
   <div  style="color: black" class="actions">
-    <%= f.submit "Registrarse" %>
+    <%= f.submit "Registrarse" , class: "btn btn-danger btn-block"%>
   </div>
 <% end %>
 
